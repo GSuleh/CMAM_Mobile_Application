@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "480449880828",
+    "firebase_url": "https://cmam-application.firebaseio.com",
+    "project_id": "cmam-application",
+    "storage_bucket": "cmam-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480449880828:android:2593cd7640806a47f92d79",
+        "android_client_info": {
+          "package_name": "com.example.cmamapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480449880828-6qk7222beosgflu2rfhdcqsd1qf8lcef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiq-jIKAyn2MJvrFQA37yB7UymQVuKoOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480449880828-6qk7222beosgflu2rfhdcqsd1qf8lcef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
