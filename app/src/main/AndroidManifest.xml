@@ -10,7 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".profile"></activity>
+        <activity android:name=".New_Patient"></activity>
+        <activity android:name=".Patients" />
+        <activity android:name=".Medical_Institutions" />
+        <activity android:name=".Inventory" />
+        <activity android:name=".Home" />
+        <activity android:name=".dashboard" />
+        <activity android:name=".profile" />
         <activity android:name=".register_user" />
         <activity
             android:name=".MainActivity"
