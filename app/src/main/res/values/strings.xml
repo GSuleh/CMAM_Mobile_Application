@@ -33,4 +33,11 @@
     <string name="medical_institutions">Medical Institutions</string>
     <string name="inventory">Inventory</string>
     <string name="hospitals">Hospitals</string>
+    <string name="enter_your_email">Enter your Email</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="guardian_email_address">Guardian Email Address</string>
+    <string name="guardian_name">Guardian name</string>
+    <string name="guardian_phone">Guardin Phone</string>
+    <string name="guardian_id">Guardian National ID</string>
+    <string name="addpatient">Add Patient</string>
 </resources>

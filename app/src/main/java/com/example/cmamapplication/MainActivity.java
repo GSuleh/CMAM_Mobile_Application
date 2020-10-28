@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView reg;
+    private TextView reg,reset;
 
     private EditText email, password;
     private Button signin;
@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         reg = (TextView) findViewById(R.id.register);
         reg.setOnClickListener(this);
+
+        reset = (TextView) findViewById(R.id.forgotpassword);
+        reset.setOnClickListener(this);
 
         signin = (Button) findViewById(R.id.signin);
         signin.setOnClickListener(this);
@@ -52,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.register:
                 startActivity(new Intent(this, register_user.class));
+                break;
+            case R.id.forgotpassword:
+                startActivity(new Intent(this, ResetPassword.class));
                 break;
             case R.id.signin:
                 userLogin();
