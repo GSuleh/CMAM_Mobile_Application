@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".LinkFacility"></activity>
+        <activity android:name=".SubCountyAdmin" />
+        <activity android:name=".CountyAdminActivity" />
+        <activity android:name=".ResetPassword" />
         <activity android:name=".New_Patient" />
         <activity android:name=".Patients" />
         <activity android:name=".Medical_Institutions" />

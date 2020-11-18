@@ -67,7 +67,7 @@ public class register_user extends AppCompatActivity implements View.OnClickList
         final String lname = lastname.getText().toString().trim();
         final String tel = phone.getText().toString().trim();
         String pass = password.getText().toString().trim();
-        final String role = "Doctor";
+        final String role = "CHV";
         if (fname.isEmpty()){
             firstname.setError("Firstname is required.");
             firstname.requestFocus();

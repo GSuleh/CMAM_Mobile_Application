@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class dashboard extends AppCompatActivity implements View.OnClickListener {
 
     private TextView signout;
+    private RelativeLayout profile;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -41,6 +44,9 @@ public class dashboard extends AppCompatActivity implements View.OnClickListener
 
         signout = (TextView) findViewById(R.id.signout);
         signout.setOnClickListener(this);
+
+        profile = (RelativeLayout) findViewById(R.id.personaldetails);
+        profile.setOnClickListener(this);
 
         reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -70,6 +76,9 @@ public class dashboard extends AppCompatActivity implements View.OnClickListener
         switch (v.getId()) {
             case R.id.signout:
                 userLogout();
+                break;
+            case R.id.personaldetails:
+                startActivity(new Intent(this, profile.class));
                 break;
         }
     }

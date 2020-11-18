@@ -18,10 +18,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    SessionManager sessionManager;
     private TextView reg,reset;
 
     private EditText email, password;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sessionManager = new SessionManager(getApplicationContext());
         reg = (TextView) findViewById(R.id.register);
         reg.setOnClickListener(this);
 
@@ -69,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String emailaddress = email.getText().toString().trim();
         String pass = password.getText().toString().trim();
 
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         if (emailaddress.isEmpty()){
             email.setError("Email is required.");
             email.requestFocus();
@@ -101,9 +107,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+
                     if (user.isEmailVerified()) {
                         progressbar.setVisibility(View.GONE);
+
                         startActivity(new Intent(MainActivity.this, Home.class));
+                        sessionManager.setLogin(true);
                     }else{
                         user.sendEmailVerification();
                         progressbar.setVisibility(View.GONE);
@@ -113,6 +122,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(MainActivity.this, "Failed to Login. Please check credentials", Toast.LENGTH_LONG).show();
                     progressbar.setVisibility(View.GONE);
                 }
+            }
+
+            private void checkIfAdmin() {
             }
         });
     }
