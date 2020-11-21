@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LinkFacility"></activity>
+        <activity android:name=".CHO"></activity>
+        <activity android:name=".LinkFacility" />
         <activity android:name=".SubCountyAdmin" />
         <activity android:name=".CountyAdminActivity" />
         <activity android:name=".ResetPassword" />

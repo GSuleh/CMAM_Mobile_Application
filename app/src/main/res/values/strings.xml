@@ -11,6 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="cmam">CMAM</string>
     <string name="malnutrition_management_system">Malnutrition Management System</string>
+    <string name="summary">A mobile application that enables health workers to manage malnutrition.</string>
     <string name="firstname">First Name</string>
     <string name="lastname">Last Name</string>
     <string name="phone">Phone Number</string>
@@ -40,4 +41,13 @@
     <string name="guardian_phone">Guardin Phone</string>
     <string name="guardian_id">Guardian National ID</string>
     <string name="addpatient">Add Patient</string>
+    <string name="chu">CHUs</string>
+    <string name="chudesc">Community Health Units in Nairobi county.</string>
+    <string name="linkfacilities">Health Facilities</string>
+    <string name="linkfacilitydesc">A list of  all health facilities in Nairobi linked to Community Health Units.</string>
+    <string name="analytics">Analytics and Reports</string>
+    <string name="analyticsdesc">Reports generated from data collected in the field by CHVs and insights gained from analyzing the data.</string>
+    <string name="settingsdesc">Manage system and User information.</string>
+    <string name="resources">Resources</string>
+    <string name="lresourcesdesc">Manage the RUTF Supply to each Sub-County.</string>
 </resources>

@@ -18,8 +18,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText email, password;
     private Button signin;
     private FirebaseAuth mAuth;
+    private String uid;
 
     private ProgressBar progressbar;
     @Override
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String pass = password.getText().toString().trim();
 
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        final DatabaseReference[] reference = {FirebaseDatabase.getInstance().getReference()};
         if (emailaddress.isEmpty()){
             email.setError("Email is required.");
             email.requestFocus();
@@ -104,15 +108,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-
+                    DatabaseReference reference;
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    reference = FirebaseDatabase.getInstance().getReference("Users");
+                    uid = user.getUid();
 
 
                     if (user.isEmailVerified()) {
                         progressbar.setVisibility(View.GONE);
+                        reference.child(uid).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                sessionManager.setLogin(true);
+                                User profile = snapshot.getValue(User.class);
+                                String role = profile.role.toString();
+                                String chmt = "CHMTAdmin";
+                                String schmt = "SCHMTAdmin";
+                                String linkfacility= "LinkFacilityAdmin";
+                                String cho = "CHO";
+                                String chv = "CHV";
 
-                        startActivity(new Intent(MainActivity.this, Home.class));
-                        sessionManager.setLogin(true);
+                                if (role.equals(chmt)) {
+                                    startActivity(new Intent(MainActivity.this, CountyAdminActivity.class));
+                                }else if(role.equals(schmt)) {
+                                    startActivity(new Intent(MainActivity.this, SubCountyAdmin.class));
+                                }else if(role.equals(linkfacility)) {
+                                    startActivity(new Intent(MainActivity.this, LinkFacility.class));
+                                }else if(role.equals(cho)) {
+                                    startActivity(new Intent(MainActivity.this, CHO.class));
+                                }else if(role.equals(chv)) {
+                                    startActivity(new Intent(MainActivity.this, Home.class));
+                                }else {
+                                    Toast.makeText(MainActivity.this, "You have not been assigned a role in the system. Kindly contact your Administrator.", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
                     }else{
                         user.sendEmailVerification();
                         progressbar.setVisibility(View.GONE);
