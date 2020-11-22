@@ -10,7 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CHO"></activity>
+        <activity android:name=".Guidelines"></activity>
+        <activity android:name=".PostDischarge" />
+        <activity android:name=".Referrals" />
+        <activity android:name=".chu" />
+        <activity android:name=".resources" />
+        <activity android:name=".CHO" />
         <activity android:name=".LinkFacility" />
         <activity android:name=".SubCountyAdmin" />
         <activity android:name=".CountyAdminActivity" />
@@ -18,7 +23,7 @@
         <activity android:name=".New_Patient" />
         <activity android:name=".Patients" />
         <activity android:name=".Medical_Institutions" />
-        <activity android:name=".Inventory" />
+        <activity android:name=".Analytics" />
         <activity android:name=".Home" />
         <activity android:name=".dashboard" />
         <activity android:name=".profile" />

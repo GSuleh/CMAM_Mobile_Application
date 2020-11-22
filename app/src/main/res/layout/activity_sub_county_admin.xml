@@ -11,38 +11,96 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:orientation="vertical"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
+            android:padding="12dp">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:gravity="center"
-                android:text="@string/malnutrition_management_system"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"/>
+                android:fontFamily="@font/roboto_regular"
+                android:text="Dashboard"
+                android:textColor="#000000"
+                android:textSize="24sp"></TextView>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/menu"
+                android:contentDescription="@string/todo">
+
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/personaldetails"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg0">
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="18dp"
+                android:src="@drawable/profile"></ImageView>
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="18dp"
+                android:layout_toRightOf="@+id/profile"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#ffff"
+                android:textSize="22dp"></TextView>
+
+            <TextView
+                android:id="@+id/tel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/username"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginEnd="40dp"
-                android:gravity="center"
-                android:text="@string/summary"
-                android:textSize="15sp"
-                android:textColor="@color/lightext"
-                />
+                android:layout_toRightOf="@+id/profile"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#ffff"
+                android:textSize="16dp"
+                android:layout_toEndOf="@+id/profile"></TextView>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tel"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="0dp"
+                android:layout_toRightOf="@+id/profile"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#ffff"
+                android:textSize="16dp"
+                android:layout_toEndOf="@+id/profile"></TextView>
+
+
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/arrow_white"
+                android:layout_marginEnd="12dp"></ImageView>
+
+        </RelativeLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -54,6 +112,7 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/chucard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -120,6 +179,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/hf_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -174,7 +234,7 @@
                             android:layout_marginBottom="12dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-                            android:text="@string/linkfacilitydesc"
+                            android:text="@string/linkfacilitydesc1"
                             android:textSize="12sp"
                             android:textColor="@color/lightext"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -187,6 +247,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/resourcecard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -241,7 +302,7 @@
                             android:layout_marginBottom="12dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-                            android:text="@string/lresourcesdesc"
+                            android:text="@string/lresourcesdesc1"
                             android:textSize="12sp"
                             android:textColor="@color/lightext"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -254,6 +315,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@id/analyticscard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -321,6 +383,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/signoutcard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -332,56 +395,56 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg4">
+                        android:background="@drawable/bg6">
 
                         <View
                             android:layout_width="80dp"
                             android:layout_height="0dp"
-                            android:background="@drawable/end_view4"
+                            android:background="@drawable/end_view6"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"/>
 
                         <ImageView
-                            android:id="@+id/settings"
+                            android:id="@+id/signout"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginLeft="12dp"
                             android:layout_marginTop="12dp"
                             android:background="@drawable/icon_background"
-                            android:contentDescription="@string/settings"
+                            android:contentDescription="@string/sign_out"
                             android:padding="10dp"
-                            android:src="@drawable/settings"
+                            android:src="@drawable/signout"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/settingstext"
+                            android:id="@+id/signouttext"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="80dp"
-                            android:text="@string/settings"
+                            android:text="@string/sign_out"
                             android:textSize="18sp"
                             android:textColor="@color/lightext"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/settings"
-                            app:layout_constraintTop_toTopOf="@id/settings"/>
+                            app:layout_constraintStart_toEndOf="@id/signout"
+                            app:layout_constraintTop_toTopOf="@id/signout"/>
 
                         <TextView
-                            android:id="@+id/settingsdesc"
+                            android:id="@+id/signoutdesc"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="12dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-                            android:text="@string/settingsdesc"
+                            android:text="@string/sign_outdesc"
                             android:textSize="12sp"
                             android:textColor="@color/lightext"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/settingstext"
-                            app:layout_constraintStart_toStartOf="@id/settingstext"
-                            app:layout_constraintTop_toBottomOf="@id/settingstext"/>
+                            app:layout_constraintEnd_toEndOf="@id/signouttext"
+                            app:layout_constraintStart_toStartOf="@id/signouttext"
+                            app:layout_constraintTop_toBottomOf="@id/signouttext"/>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

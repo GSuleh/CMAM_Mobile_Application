@@ -2,11 +2,12 @@ package com.example.cmamapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView new_p, pat, dash, hosp, inv, out;
+    private CardView screening, pat, guidelines, postdischarge, out;
+    private RelativeLayout profile;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -35,27 +37,27 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         reference = FirebaseDatabase.getInstance().getReference("Users");
         uid = user.getUid();
 
-        final TextView name = (TextView) findViewById(R.id.name);
+        final TextView name = (TextView) findViewById(R.id.username);
+        final TextView phone = (TextView) findViewById(R.id.tel);
+        final TextView userrole = (TextView) findViewById(R.id.role);
 
+        screening = (CardView) findViewById(R.id.screeningcard);
+        screening.setOnClickListener( this);
 
-        new_p = (ImageView) findViewById(R.id.newpatient);
-        new_p.setOnClickListener( this);
-
-        pat = (ImageView) findViewById(R.id.activepatients);
+        pat = (CardView) findViewById(R.id.patientcard);
         pat.setOnClickListener( this);
 
-        dash = (ImageView) findViewById(R.id.dashboard);
-        dash.setOnClickListener( this);
+        guidelines = (CardView) findViewById(R.id.guidelinescard);
+        guidelines.setOnClickListener( this);
 
-        hosp = (ImageView) findViewById(R.id.hospitals);
-        hosp.setOnClickListener(this);
+        postdischarge = (CardView) findViewById(R.id.postdischargecard);
+        postdischarge.setOnClickListener( this);
 
-        inv = (ImageView) findViewById(R.id.inventory);
-        inv.setOnClickListener(this);
-
-        out = (ImageView) findViewById(R.id.signout);
+        out = (CardView) findViewById(R.id.signoutcard);
         out.setOnClickListener(this);
 
+        profile = (RelativeLayout) findViewById(R.id.personaldetails);
+        profile.setOnClickListener(this);
 
         reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -66,8 +68,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                     String fname = profile.firstname;
                     String lname = profile.lastname;
                     String tel = profile.phone;
+                    String role = profile.role;
 
                     name.setText(fname+" "+lname);
+                    phone.setText(tel);
+                    userrole.setText(role);
                 }
             }
 
@@ -81,22 +86,22 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.newpatient:
+            case R.id.screeningcard:
                 startActivity(new Intent(this, New_Patient.class));
                 break;
-            case R.id.activepatients:
+            case R.id.patientcard:
                 startActivity(new Intent(this, Patients.class));
                 break;
-            case R.id.dashboard:
-                startActivity(new Intent(this, dashboard.class));
+            case R.id.guidelinescard:
+                startActivity(new Intent(this, Guidelines.class));
                 break;
-            case R.id.hospitals:
-                startActivity(new Intent(this, Medical_Institutions.class));
+            case R.id.postdischargecard:
+                startActivity(new Intent(this, PostDischarge.class));
                 break;
-            case R.id.inventory:
-                startActivity(new Intent(this, Inventory.class));
+            case R.id.personaldetails:
+                startActivity(new Intent(this, profile.class));
                 break;
-            case R.id.signout:
+            case R.id.signoutcard:
                 userLogout();
                 break;
         }

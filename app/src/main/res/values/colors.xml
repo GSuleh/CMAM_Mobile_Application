@@ -16,6 +16,9 @@
     <color name="colorFive">#FF8F45</color>
     <color name="colorFiveDark">#A33900</color>
 
+    <color name="colorSix">#67FF45</color>
+    <color name="colorSixDark">#1EA300</color>
+
     <color name="address">#2F7092</color>
     <color name="followers">#0D5D98</color>
     <color name="headings">#3797CF</color>
