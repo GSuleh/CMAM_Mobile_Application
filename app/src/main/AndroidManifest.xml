@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Guidelines"></activity>
+        <activity android:name=".UserManagement"></activity>
+        <activity android:name=".SubCountyCHU" />
+        <activity android:name=".Guidelines" />
         <activity android:name=".PostDischarge" />
         <activity android:name=".Referrals" />
         <activity android:name=".chu" />

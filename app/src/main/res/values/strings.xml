@@ -66,4 +66,8 @@
     <string name="cmamguidelines">CMAM Guidelines</string>
     <string name="postdischarge">Post Discharge</string>
     <string name="postdischargedesc">Follow up on patients after completion of treatment.</string>
+    <string name="subcountychu">Sub Counties and CHUs</string>
+    <string name="subcountychudesc">List of all Sub-Counties and their associated CHUs.</string>
+    <string name="user">Manage Users</string>
+    <string name="userdesc">Assign Users roles within the system.</string>
 </resources>

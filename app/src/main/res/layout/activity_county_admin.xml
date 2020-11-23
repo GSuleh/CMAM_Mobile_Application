@@ -109,6 +109,75 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/usercard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="6dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg0">
+
+                        <View
+                            android:layout_width="80dp"
+                            android:layout_height="0dp"
+                            android:background="@drawable/end_view"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+                        <ImageView
+                            android:id="@+id/user"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/icon_background"
+                            android:contentDescription="@string/user"
+                            android:padding="10dp"
+                            android:src="@drawable/man"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/usertext"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="80dp"
+                            android:maxLines="1"
+                            android:text="@string/user"
+                            android:textSize="18sp"
+                            android:textColor="@color/lightext"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/user"
+                            app:layout_constraintTop_toTopOf="@id/user"/>
+
+                        <TextView
+                            android:id="@+id/userdesc"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/userdesc"
+                            android:textSize="12sp"
+                            android:textColor="@color/lightext"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/usertext"
+                            app:layout_constraintStart_toStartOf="@id/usertext"
+                            app:layout_constraintTop_toBottomOf="@id/usertext"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/chucard"
                     android:layout_width="match_parent"
@@ -150,7 +219,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="80dp"
-                            android:text="@string/chu"
+                            android:maxLines="1"
+                            android:text="@string/subcountychu"
                             android:textSize="18sp"
                             android:textColor="@color/lightext"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +234,7 @@
                             android:layout_marginBottom="12dp"
                             android:ellipsize="end"
                             android:maxLines="2"
-                            android:text="@string/chudesc"
+                            android:text="@string/subcountychudesc"
                             android:textSize="12sp"
                             android:textColor="@color/lightext"
                             app:layout_constraintBottom_toBottomOf="parent"

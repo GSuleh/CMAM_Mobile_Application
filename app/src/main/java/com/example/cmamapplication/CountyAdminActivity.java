@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class CountyAdminActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView chus, hospital, resources, analytics, out;
+    private CardView users, chus, hospital, resources, analytics, out;
     private RelativeLayout profile;
 
     private FirebaseUser user;
@@ -40,6 +40,9 @@ public class CountyAdminActivity extends AppCompatActivity implements View.OnCli
         final TextView name = (TextView) findViewById(R.id.username);
         final TextView phone = (TextView) findViewById(R.id.tel);
         final TextView userrole = (TextView) findViewById(R.id.role);
+
+        users = (CardView) findViewById(R.id.usercard);
+        users.setOnClickListener(this);
 
         chus = (CardView) findViewById(R.id.chucard);
         chus.setOnClickListener(this);
@@ -88,8 +91,11 @@ public class CountyAdminActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.usercard:
+                startActivity(new Intent(this, UserManagement.class));
+                break;
             case R.id.chucard:
-                startActivity(new Intent(this, chu.class));
+                startActivity(new Intent(this, SubCountyCHU.class));
                 break;
             case R.id.hf_card:
                 startActivity(new Intent(this, Medical_Institutions.class));
