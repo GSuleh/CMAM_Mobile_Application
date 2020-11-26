@@ -70,4 +70,10 @@
     <string name="subcountychudesc">List of all Sub-Counties and their associated CHUs.</string>
     <string name="user">Manage Users</string>
     <string name="userdesc">Assign Users roles within the system.</string>
+    <string name="assignuserrole">Assign Users Roles</string>
+    <string name="userroledesc">Assign users roles within the systemAssign Users roles and committees within the system.</string>
+    <string name="name">Name</string>
+    <string name="role">Role</string>
+    <string name="email">Email</string>
+    <string name="edit">Edit</string>
 </resources>
