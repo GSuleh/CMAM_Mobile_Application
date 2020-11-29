@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserManagement extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView assignrole, counties;
+    private CardView assignrole, createuser;
     private RelativeLayout profile;
 
     private FirebaseUser user;
@@ -40,8 +40,8 @@ public class UserManagement extends AppCompatActivity implements View.OnClickLis
         assignrole = (CardView) findViewById(R.id.userrolecard);
         assignrole.setOnClickListener(this);
 
-        counties = (CardView) findViewById(R.id.committeescard);
-        counties.setOnClickListener(this);
+        createuser = (CardView) findViewById(R.id.createusercard);
+        createuser.setOnClickListener(this);
 
 
     }
@@ -52,8 +52,8 @@ public class UserManagement extends AppCompatActivity implements View.OnClickLis
             case R.id.userrolecard:
                 startActivity(new Intent(this, RoleManagement.class));
                 break;
-            case R.id.committeescard:
-                startActivity(new Intent(this, CountiesActivity.class));
+            case R.id.createusercard:
+                startActivity(new Intent(this, register_user.class));
                 break;
         }
     }

@@ -58,7 +58,7 @@ public class ManageCommittees extends AppCompatActivity implements View.OnClickL
                 startActivity(new Intent(this, Medical_Institutions.class));
                 break;
             case R.id.chuscard:
-                startActivity(new Intent(this, Analytics.class));
+                startActivity(new Intent(this, chu.class));
                 break;
         }
     }

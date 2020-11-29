@@ -209,7 +209,7 @@
                             android:background="@drawable/icon_background"
                             android:contentDescription="@string/malnutrition_management_system"
                             android:padding="10dp"
-                            android:src="@drawable/users"
+                            android:src="@drawable/countyicon"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 

@@ -84,4 +84,14 @@
     <string name="subcounty">Sub Counties</string>
     <string name="subcountydesc">List of all Sub Counties in Nairobi.</string>
     <string name="chudesc3">List of all Community Health Units in Nairobi.</string>
+    <string name="createuser">Create User</string>
+    <string name="createusersdesc">Create users within the system. (prompted to verify account on login)</string>
+    <string name="ward">Ward</string>
+    <string name="code">Code</string>
+    <string name="createresource">Create Resource Package</string>
+    <string name="assigninventory">Allocate Inventory</string>
+    <string name="resoursecreation">Create new resource inventory.</string>
+    <string name="inventorydesc">Allocate resources to Sub Counties</string>
+    <string name="updateinventory">Update Inventory</string>
+    <string name="updateinventorydesc">Update exiting inventory.</string>
 </resources>

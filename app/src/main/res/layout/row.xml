@@ -43,7 +43,7 @@
                     android:background="@drawable/icon_background"
                     android:contentDescription="@string/user"
                     android:padding="10dp"
-                    android:src="@drawable/man"
+                    android:src="@drawable/countyicon"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
