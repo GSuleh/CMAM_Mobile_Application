@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserManagement extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView assignrole, subcounties;
+    private CardView assignrole, counties;
     private RelativeLayout profile;
 
     private FirebaseUser user;
@@ -31,7 +31,7 @@ public class UserManagement extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub_county_admin);
+        setContentView(R.layout.activity_user_management);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -40,8 +40,8 @@ public class UserManagement extends AppCompatActivity implements View.OnClickLis
         assignrole = (CardView) findViewById(R.id.userrolecard);
         assignrole.setOnClickListener(this);
 
-        subcounties = (CardView) findViewById(R.id.subcountiescard);
-        subcounties.setOnClickListener(this);
+        counties = (CardView) findViewById(R.id.committeescard);
+        counties.setOnClickListener(this);
 
 
     }
@@ -49,11 +49,11 @@ public class UserManagement extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.usercard:
-                startActivity(new Intent(this, AssignRole.class));
+            case R.id.userrolecard:
+                startActivity(new Intent(this, RoleManagement.class));
                 break;
-            case R.id.subcountiescard:
-                startActivity(new Intent(this, SubCounties.class));
+            case R.id.committeescard:
+                startActivity(new Intent(this, CountiesActivity.class));
                 break;
         }
     }

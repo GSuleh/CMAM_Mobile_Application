@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class CountyAdminActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView users, chus, hospital, resources, analytics, out;
+    private CardView users, committees, resources, analytics, out;
     private RelativeLayout profile;
 
     private FirebaseUser user;
@@ -44,11 +44,8 @@ public class CountyAdminActivity extends AppCompatActivity implements View.OnCli
         users = (CardView) findViewById(R.id.usercard);
         users.setOnClickListener(this);
 
-        chus = (CardView) findViewById(R.id.chucard);
-        chus.setOnClickListener(this);
-
-        hospital = (CardView) findViewById(R.id.hf_card);
-        hospital.setOnClickListener(this);
+        committees = (CardView) findViewById(R.id.listcommitteescard);
+        committees.setOnClickListener(this);
 
         resources = (CardView) findViewById(R.id.resourcecard);
         resources.setOnClickListener(this);
@@ -94,11 +91,8 @@ public class CountyAdminActivity extends AppCompatActivity implements View.OnCli
             case R.id.usercard:
                 startActivity(new Intent(this, UserManagement.class));
                 break;
-            case R.id.chucard:
-                startActivity(new Intent(this, SubCountyCHU.class));
-                break;
-            case R.id.hf_card:
-                startActivity(new Intent(this, Medical_Institutions.class));
+            case R.id.listcommitteescard:
+                startActivity(new Intent(this, ManageCommittees.class));
                 break;
             case R.id.resourcecard:
                 startActivity(new Intent(this, resources.class));

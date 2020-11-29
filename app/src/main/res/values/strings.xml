@@ -76,4 +76,12 @@
     <string name="role">Role</string>
     <string name="email">Email</string>
     <string name="edit">Edit</string>
+    <string name="committees">Committees</string>
+    <string name="committesdesc">Assign users to commitees based on roles</string>
+    <string name="listcommittesdesc">Manage all committees in the system</string>
+    <string name="counties">Counties</string>
+    <string name="countiesdesc">List of all counties in Kenya.</string>
+    <string name="subcounty">Sub Counties</string>
+    <string name="subcountydesc">List of all Sub Counties in Nairobi.</string>
+    <string name="chudesc3">List of all Community Health Units in Nairobi.</string>
 </resources>
