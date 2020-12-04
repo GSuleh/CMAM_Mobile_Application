@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapUserSubCountyActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Assign SCHMT Admin"
+            android:textColor="#000000"
+            android:textSize="24sp"></TextView>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu"
+            android:contentDescription="@string/todo">
+
+        </ImageView>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/bannerdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="15dp"
+        android:text="@string/assignadmin"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative"
+        android:layout_gravity="center_horizontal" />
+
+
+    <TextView
+        android:id="@+id/spinnertextview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:text="@string/selectuser"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerdescription"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/usersspinner"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnertextview"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textviewsub"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/subcountyname"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usersspinner"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/assignedsubcountyname"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/subcounty"
+        android:inputType="none"
+        android:focusable="false"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textviewsub"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textviewcode"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/code"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assignedsubcountyname"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/assignedsubcountycode"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/code"
+        android:inputType="none"
+        android:focusable="false"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textviewcode"
+        android:autofillHints="" />
+
+
+    <Button
+        android:id="@+id/assignedsubcounty"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg"
+        android:text="@string/assignadmin"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assignedsubcountycode"
+        tools:targetApi="lollipop"/>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:ignore = "MissingConstraint"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

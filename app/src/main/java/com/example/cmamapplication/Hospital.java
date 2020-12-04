@@ -4,6 +4,7 @@ public class Hospital {
 
 
     String  Officialname, Ward;
+    Long Code;
 
     public Hospital() {
     }
@@ -24,8 +25,17 @@ public class Hospital {
         Ward = ward;
     }
 
-    public Hospital(String officialname, String ward) {
+    public Long getCode() {
+        return Code;
+    }
+
+    public void setCode(Long code) {
+        Code = code;
+    }
+
+    public Hospital(String officialname, String ward, Long code) {
         Officialname = officialname;
         Ward = ward;
+        Code = code;
     }
 }

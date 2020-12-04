@@ -94,4 +94,13 @@
     <string name="inventorydesc">Allocate resources to Sub Counties</string>
     <string name="updateinventory">Update Inventory</string>
     <string name="updateinventorydesc">Update exiting inventory.</string>
+    <string name="newresource">New Resource Entry</string>
+    <string name="serialno">Serial Number</string>
+    <string name="product">Product Name</string>
+    <string name="inventoryamount">Inventory Amount</string>
+    <string name="create">CREATE</string>
+    <string name="resourcetype">Resource Type</string>
+    <string name="assignadmin">Assign Admin</string>
+    <string name="subcountyname">Sub County</string>
+    <string name="selectuser">Select User</string>
 </resources>

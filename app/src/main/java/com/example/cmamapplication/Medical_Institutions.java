@@ -44,7 +44,7 @@ public class Medical_Institutions extends AppCompatActivity {
                     hospitalsData.add(data);
                 }
 
-                adapter = new MedicalInstitutionAdapter(hospitalsData);
+                adapter = new MedicalInstitutionAdapter(Medical_Institutions.this, hospitalsData);
                 recyclerview.setAdapter(adapter);
             }
 

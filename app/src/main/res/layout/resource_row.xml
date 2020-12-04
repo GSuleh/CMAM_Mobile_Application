@@ -7,11 +7,10 @@
     android:layout_marginTop="5dp"
     app:cardCornerRadius="3dp"
     app:cardElevation="3dp"
-    app:cardUseCompatPadding="true"
-    android:id="@+id/hfparent">
+    app:cardUseCompatPadding="true">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/healthfacilitiescard"
+        android:id="@+id/allocateresourcescard"
         android:layout_width="330dp"
         android:layout_height="80dp"
         android:layout_marginStart="15dp"
@@ -23,10 +22,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@drawable/bg5">
+            android:background="@drawable/bg4">
 
             <View
-                android:id="@+id/hf"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/arrow_white"
@@ -35,47 +33,46 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <ImageView
-                android:id="@+id/healthfacilityid"
+                android:id="@+id/resourceid"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/icon_background"
-                android:contentDescription="@string/user"
+                android:contentDescription="@string/resources"
                 android:padding="10dp"
-                android:src="@drawable/countyicon"
+                android:src="@drawable/inventory"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/healthfacilitynameid"
+                android:id="@+id/resourcenameid"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="50dp"
-                android:maxLines="1"
+                android:layout_marginRight="80dp"
                 android:text="@string/name"
                 android:textSize="18sp"
                 android:textColor="@color/lightext"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/healthfacilityid"
-                app:layout_constraintTop_toTopOf="@id/healthfacilityid"/>
+                app:layout_constraintStart_toEndOf="@id/resourceid"
+                app:layout_constraintTop_toTopOf="@id/resourceid"/>
 
             <TextView
-            android:id="@+id/ward"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="12dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="@string/ward"
-            android:textSize="12sp"
-            android:textColor="@color/lightext"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/healthfacilityid"
-            app:layout_constraintStart_toStartOf="@id/healthfacilitynameid"
-            app:layout_constraintTop_toBottomOf="@id/healthfacilitynameid"/>
+                android:id="@+id/resourcetype"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/role"
+                android:textSize="12sp"
+                android:textColor="@color/lightext"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/resourceid"
+                app:layout_constraintTop_toBottomOf="@id/resourcenameid"/>
 
 
 

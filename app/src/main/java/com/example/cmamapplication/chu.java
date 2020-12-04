@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,15 +21,19 @@ import java.util.List;
 public class chu extends AppCompatActivity {
 
     RecyclerView recyclerview;
+    private FirebaseUser user;
     private DatabaseReference reference;
     List<CommunityHealthUnit> chuData;
     ChuAdapter adapter;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chu);
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
         reference = FirebaseDatabase.getInstance().getReference("chus");
 
         recyclerview =  (RecyclerView)findViewById(R.id.chus_recyclerview);
@@ -43,7 +49,7 @@ public class chu extends AppCompatActivity {
                     chuData.add(data);
                 }
 
-                adapter = new ChuAdapter(chuData);
+                adapter = new ChuAdapter(chu.this,chuData);
                 recyclerview.setAdapter(adapter);
             }
 

@@ -53,7 +53,7 @@ public class UserManagement extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(this, RoleManagement.class));
                 break;
             case R.id.createusercard:
-                startActivity(new Intent(this, register_user.class));
+                startActivity(new Intent(this, UserCreation.class));
                 break;
         }
     }

@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SubCounties extends AppCompatActivity {
+public class AllocateResource extends AppCompatActivity {
 
     RecyclerView recyclerview;
     private DatabaseReference reference, ref, ref1;
@@ -26,7 +26,7 @@ public class SubCounties extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub_counties);
+        setContentView(R.layout.activity_allocate_resource);
 
         reference = FirebaseDatabase.getInstance().getReference("counties");
         reference.keepSynced(true);
@@ -34,7 +34,7 @@ public class SubCounties extends AppCompatActivity {
         ref1 = ref.child("sub_counties");
 
 
-        recyclerview =  (RecyclerView)findViewById(R.id.subcounties_recyclerview);
+        recyclerview =  (RecyclerView)findViewById(R.id.allocate_recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         subcountyData = new ArrayList<>();
 
@@ -47,7 +47,7 @@ public class SubCounties extends AppCompatActivity {
                     subcountyData.add(data);
                 }
 
-                adapter = new SubCountyAdapter(SubCounties.this,subcountyData);
+                adapter = new SubCountyAdapter(AllocateResource.this,subcountyData);
                 recyclerview.setAdapter(adapter);
             }
 
