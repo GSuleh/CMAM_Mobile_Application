@@ -32,12 +32,7 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
 
     String id;
     String name;
-    String code;
-    Object item;
-    String recieved;
-    String available;
-    String allocated;
-    String type;
+    String code, recieved, available,allocated, type, item;
     Long amt ,avlbl, rcvd, all, committee_id;
     EditText serialno, amount;
 
@@ -60,7 +55,7 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
         getIncomingIntent();
 
         reference = FirebaseDatabase.getInstance().getReference("counties");
-        reference1 = FirebaseDatabase.getInstance().getReference("counties");
+        reference1 = FirebaseDatabase.getInstance().getReference("Resource");
 
         reference.keepSynced(true);
         ref = reference.child("46");
@@ -84,6 +79,7 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
                     spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            getCommitteeID();
                             item = spinner.getSelectedItem().toString();
                         }
 
@@ -101,7 +97,8 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
             }
         });
 
-        assign = (Button) findViewById(R.id.assignedresource);
+
+        assign = (Button) findViewById(R.id.assignresource);
         assign.setOnClickListener(this);
 
     }
@@ -112,6 +109,7 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
 
             name = getIntent().getStringExtra("NAME");
             code = getIntent().getStringExtra("CODE");
+            type = getIntent().getStringExtra("TYPE");
             recieved = getIntent().getStringExtra("INVENTORY_RECEIVED");
             available = getIntent().getStringExtra("INVENTORY_AVAILABLE");
             allocated = getIntent().getStringExtra("INVENTORY_ALLOCATED");
@@ -122,7 +120,7 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.assignedresource:
+            case R.id.assignresource:
                 allocateResource();
                 break;
         }
@@ -135,8 +133,15 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
         amt = Long.valueOf(amount.getText().toString().trim());
         avlbl = Long.valueOf(available) - amt;
         rcvd = Long.valueOf(recieved) - amt;
-        all = Long.valueOf(allocated) - amt;
-        reference1.child("Resource").orderByChild("serial_number").equalTo(code).addListenerForSingleValueEvent(new ValueEventListener() {
+        all = Long.valueOf(allocated) + amt;
+        final Long allocate = Long.valueOf(0);
+        final Long max = Long.valueOf(10000);
+        final Long min = Long.valueOf(1000);
+
+
+
+
+        reference1.orderByChild("serial_number").equalTo(code).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds:snapshot.getChildren())
@@ -145,13 +150,7 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
 
                     reference1.child(id).child("inventory_available").setValue(avlbl);
                     reference1.child(id).child("inventory_received").setValue(rcvd);
-                    reference1.child(id).child("inventory_received").setValue(all);
-
-                    reference1.child(id).child("inventory_available").setValue(avlbl);
-                    reference1.child(id).child("inventory_received").setValue(rcvd);
-                    Long allocate = Long.valueOf(0);
-                    Long max = Long.valueOf(10000);
-                    Long min = Long.valueOf(1000);
+                    reference1.child(id).child("inventory_allocated").setValue(all);
 
                     resource = new ResourceClass(type,name,code, committee_id,amt,amt,amt, allocate,max, min);
                     reference1.push().setValue(resource);
@@ -165,5 +164,28 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
 
             }
         });
+    }
+
+    private void getCommitteeID() {
+
+        ref1.orderByChild("sub_county").equalTo(spinner.getSelectedItem().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds:snapshot.getChildren()) {
+                    SubCountyClass subcountyclass = ds.getValue(SubCountyClass.class);
+                    if (subcountyclass != null) {
+
+                        committee_id = subcountyclass.getCode();
+                        Toast.makeText(MapAllocateResourceActivity.this, committee_id.toString(), Toast.LENGTH_LONG).show();
+
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }
