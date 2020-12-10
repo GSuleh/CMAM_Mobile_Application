@@ -109,4 +109,6 @@
     <string name="selectsubcounty">Select SubCounty</string>
     <string name="amount">Amount</string>
     <string name="updateresource">Update Resource</string>
+    <string name="status">Status</string>
+    <string name="sub_county_chus">Sub County CHUs</string>
 </resources>

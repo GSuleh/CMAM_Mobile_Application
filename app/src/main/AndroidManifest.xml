@@ -10,8 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapAllocateResourceActivity"></activity>
-        <activity android:name=".MapUpdateResourceActivity"></activity>
+        <activity android:name=".MapSubCountyCHUS"></activity>
+        <activity android:name=".subcounty_chu" />
+        <activity android:name=".MapAllocateResourceActivity" />
+        <activity android:name=".MapUpdateResourceActivity" />
         <activity android:name=".MapUserRoleActivity" />
         <activity android:name=".MapCommitteeResourceActivity" />
         <activity android:name=".MapUserCHUActivity" />

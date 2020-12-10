@@ -136,7 +136,7 @@ public class UserCreation extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user = new User(fname,lname,emailaddress,tel,role);
+                            User user = new User(fname,lname,emailaddress,tel,role,null);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

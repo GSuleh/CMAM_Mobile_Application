@@ -6,6 +6,8 @@ public class User {
 
     public String firstname, lastname, email, phone, role;
 
+    public Long committee_id;
+
     public User(){}
 
     public String getFirstname() {
@@ -48,12 +50,20 @@ public class User {
         this.role = role;
     }
 
-    public User(String firstname, String lastname, String email, String phone, String role){
+    public Long getCommittee_id() {
+        return committee_id;
+    }
+
+    public void setCommittee_id(Long committee_id) {
+        this.committee_id = committee_id;
+    }
+
+    public User(String firstname, String lastname, String email, String phone, String role, Long committee_id) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.phone = phone;
         this.role = role;
-
+        this.committee_id = committee_id;
     }
 }
