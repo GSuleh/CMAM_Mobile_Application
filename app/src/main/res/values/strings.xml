@@ -103,4 +103,10 @@
     <string name="assignadmin">Assign Admin</string>
     <string name="subcountyname">Sub County</string>
     <string name="selectuser">Select User</string>
+    <string name="selectrole">Select Role</string>
+    <string name="assignrole">Assign Role</string>
+    <string name="assignresource">Assign Resource</string>
+    <string name="selectsubcounty">Select SubCounty</string>
+    <string name="amount">Amount</string>
+    <string name="updateresource">Update Resource</string>
 </resources>

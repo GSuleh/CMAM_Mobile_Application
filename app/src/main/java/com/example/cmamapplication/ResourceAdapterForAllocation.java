@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ResourceAdapter extends RecyclerView.Adapter {
+public class ResourceAdapterForAllocation extends RecyclerView.Adapter {
 
     List<ResourceClass> resources_list;
     Context context;
 
-    public ResourceAdapter(Context context, List<ResourceClass> resources_list) {
+    public ResourceAdapterForAllocation(Context context, List<ResourceClass> resources_list) {
         this.resources_list = resources_list;
         this.context = context;
     }
@@ -41,11 +41,13 @@ public class ResourceAdapter extends RecyclerView.Adapter {
         myholder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MapUpdateResourceActivity.class);
+                Intent intent = new Intent(context, MapAllocateResourceActivity.class);
                 intent.putExtra("NAME", String.valueOf(resources.getProduct_name()));
                 intent.putExtra("CODE", String.valueOf(resources.getSerial_number()));
-                intent.putExtra("INVENTORY_RECEIVED", String.valueOf(resources.getInventory_received()));
+                intent.putExtra("TYPE", String.valueOf(resources.getType()));
+                intent.putExtra("INVENTORY_ALLOCATED", String.valueOf(resources.getInventory_allocated()));
                 intent.putExtra("INVENTORY_AVAILABLE", String.valueOf(resources.getInventory_available()));
+                intent.putExtra("INVENTORY_RECEIVED", String.valueOf(resources.getInventory_received()));
                 context.startActivity(intent);
             }
         });

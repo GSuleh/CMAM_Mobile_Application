@@ -79,13 +79,14 @@ public class CreateResource extends AppCompatActivity implements AdapterView.OnI
             final String type = spinner.getSelectedItem().toString();
 
             Long all = Long.valueOf(0);
-            Long max = Long.valueOf(10000);
-            Long min = Long.valueOf(1000);
+            Long max = Long.valueOf(100000);
+            Long min = Long.valueOf(10000);
             Long countyid = Long.valueOf(46);
 
             resource = new ResourceClass(type,product,serial, countyid,inv,inv,inv, all,max, min);
             reference.push().setValue(resource);
             progressBar.setVisibility(View.VISIBLE);
+            startActivity(new Intent(CreateResource.this, resources.class));
         }
     }
 
@@ -94,7 +95,6 @@ public class CreateResource extends AppCompatActivity implements AdapterView.OnI
         switch (v.getId()){
             case R.id.createinventory:
         InsertData();
-        startActivity(new Intent(this, resources.class));
         break;
     }
     }

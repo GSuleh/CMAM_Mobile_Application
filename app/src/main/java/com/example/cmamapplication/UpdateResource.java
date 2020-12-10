@@ -43,7 +43,7 @@ public class UpdateResource extends AppCompatActivity {
                     resourceData.add(data);
                 }
 
-                adapter = new ResourceAdapter(resourceData);
+                adapter = new ResourceAdapter(UpdateResource.this,resourceData);
                 recyclerview.setAdapter(adapter);
             }
 

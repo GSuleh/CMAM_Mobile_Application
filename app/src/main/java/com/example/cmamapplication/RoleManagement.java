@@ -29,7 +29,7 @@ public class RoleManagement extends AppCompatActivity {
         setContentView(R.layout.activity_role_management);
 
         reference = FirebaseDatabase.getInstance().getReference("Users");
-        //reference.keepSynced(true);
+        reference.keepSynced(true);
 
         recyclerview =  (RecyclerView)findViewById(R.id.user_recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -43,7 +43,7 @@ public class RoleManagement extends AppCompatActivity {
                     User data = ds.getValue(User.class);
                     userData.add(data);
                 }
-                adapter = new RoleAdapter(userData);
+                adapter = new RoleAdapter(RoleManagement.this,userData);
                 recyclerview.setAdapter(adapter);
             }
 

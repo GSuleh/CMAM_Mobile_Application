@@ -19,35 +19,31 @@ import java.util.List;
 public class AllocateResource extends AppCompatActivity {
 
     RecyclerView recyclerview;
-    private DatabaseReference reference, ref, ref1;
-    List<SubCountyClass> subcountyData;
-    SubCountyAdapter adapter;
+    private DatabaseReference reference;
+    List<ResourceClass> resourceData;
+    ResourceAdapterForAllocation adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_allocate_resource);
 
-        reference = FirebaseDatabase.getInstance().getReference("counties");
-        reference.keepSynced(true);
-        ref = reference.child("46");
-        ref1 = ref.child("sub_counties");
-
-
         recyclerview =  (RecyclerView)findViewById(R.id.allocate_recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        subcountyData = new ArrayList<>();
+        resourceData = new ArrayList<>();
 
-        ref1.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference = FirebaseDatabase.getInstance().getReference("Resource");
+
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot ds:snapshot.getChildren())
                 {
-                    SubCountyClass data = ds.getValue(SubCountyClass.class);
-                    subcountyData.add(data);
+                    ResourceClass data = ds.getValue(ResourceClass.class);
+                    resourceData.add(data);
                 }
 
-                adapter = new SubCountyAdapter(AllocateResource.this,subcountyData);
+                adapter = new ResourceAdapterForAllocation(AllocateResource.this,resourceData);
                 recyclerview.setAdapter(adapter);
             }
 
