@@ -113,4 +113,6 @@
     <string name="sub_county_chus">Sub County CHUs</string>
     <string name="linkfacility">Link Facility</string>
     <string name="facilitytype">Facility Type</string>
+    <string name="requestresource">Request for Resource</string>
+    <string name="subcountycode">SubCounty Code</string>
 </resources>
