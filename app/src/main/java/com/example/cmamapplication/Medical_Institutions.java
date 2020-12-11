@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,18 +20,20 @@ import java.util.List;
 
 public class Medical_Institutions extends AppCompatActivity {
 
+    private FirebaseUser user;
+    private String uid;
     RecyclerView recyclerview;
     private DatabaseReference reference;
     List<Hospital> hospitalsData;
     MedicalInstitutionAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical__institutions);
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
         reference = FirebaseDatabase.getInstance().getReference("HealthFacilities");
-        reference.keepSynced(true);
 
         recyclerview =  (RecyclerView)findViewById(R.id.healthfacilities_recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -43,7 +47,6 @@ public class Medical_Institutions extends AppCompatActivity {
                     Hospital data = ds.getValue(Hospital.class);
                     hospitalsData.add(data);
                 }
-
                 adapter = new MedicalInstitutionAdapter(Medical_Institutions.this, hospitalsData);
                 recyclerview.setAdapter(adapter);
             }

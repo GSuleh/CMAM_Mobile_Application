@@ -93,7 +93,7 @@ public class SubCountyAdmin extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(this, subcounty_chu.class));
                 break;
             case R.id.hf_card:
-                startActivity(new Intent(this, Medical_Institutions.class));
+                startActivity(new Intent(this, SubCountMedicalInstitutions.class));
                 break;
             case R.id.resourcecard:
                 startActivity(new Intent(this, resources.class));

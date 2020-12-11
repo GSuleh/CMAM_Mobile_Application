@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapSubCountyCHUS"></activity>
+        <activity android:name=".SubCountMedicalInstitutions"></activity>
+        <activity android:name=".MapSubCountyLinkFacility" />
+        <activity android:name=".MapSubCountyCHUS" />
         <activity android:name=".subcounty_chu" />
         <activity android:name=".MapAllocateResourceActivity" />
         <activity android:name=".MapUpdateResourceActivity" />

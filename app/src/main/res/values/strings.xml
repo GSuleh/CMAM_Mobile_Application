@@ -111,4 +111,6 @@
     <string name="updateresource">Update Resource</string>
     <string name="status">Status</string>
     <string name="sub_county_chus">Sub County CHUs</string>
+    <string name="linkfacility">Link Facility</string>
+    <string name="facilitytype">Facility Type</string>
 </resources>
