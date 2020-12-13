@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ResourceAdapterForRequest extends RecyclerView.Adapter {
+public class ResourceAdapterForSubcountyAllocation extends RecyclerView.Adapter {
 
     List<ResourceClass> resources_list;
     Context context;
 
-    public ResourceAdapterForRequest(Context context, List<ResourceClass> resources_list) {
+    public ResourceAdapterForSubcountyAllocation(Context context, List<ResourceClass> resources_list) {
         this.resources_list = resources_list;
         this.context = context;
     }
@@ -41,7 +41,7 @@ public class ResourceAdapterForRequest extends RecyclerView.Adapter {
         myholder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, MapRequestResourceActivity.class);
+                Intent intent = new Intent(context, MapSubcountyAllocateResources.class);
                 intent.putExtra("NAME", String.valueOf(resources.getProduct_name()));
                 intent.putExtra("CODE", String.valueOf(resources.getSerial_number()));
                 intent.putExtra("TYPE", String.valueOf(resources.getType()));

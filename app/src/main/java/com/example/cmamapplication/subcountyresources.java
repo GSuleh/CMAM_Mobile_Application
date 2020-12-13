@@ -29,7 +29,7 @@ public class subcountyresources extends AppCompatActivity implements View.OnClic
                 startActivity(new Intent(this, RequestResource.class));
                 break;
             case R.id.assignresourcecard:
-                startActivity(new Intent(this, AllocateResource.class));
+                startActivity(new Intent(this, SubcountyAllocateResources.class));
                 break;
 
         }
