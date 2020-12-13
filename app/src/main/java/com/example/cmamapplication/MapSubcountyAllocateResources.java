@@ -35,7 +35,7 @@ public class MapSubcountyAllocateResources extends AppCompatActivity implements 
 
     String id,uid;
     String name, subcounty;
-    String code, recieved, available,allocated, type, item;
+    String code, recieved, available,allocated, type, item, HEALTHFACILITY_CODE;
     Long amt ,avlbl, rcvd, all, committee, committee_id;
     EditText serialno, amount;
 
@@ -175,7 +175,7 @@ public class MapSubcountyAllocateResources extends AppCompatActivity implements 
             recieved = getIntent().getStringExtra("INVENTORY_RECEIVED");
             available = getIntent().getStringExtra("INVENTORY_AVAILABLE");
             allocated = getIntent().getStringExtra("INVENTORY_ALLOCATED");
-
+            HEALTHFACILITY_CODE = getIntent().getStringExtra("HEALTHFACILITY_CODE");
         }
     }
 

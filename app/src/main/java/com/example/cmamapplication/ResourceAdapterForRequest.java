@@ -48,7 +48,7 @@ public class ResourceAdapterForRequest extends RecyclerView.Adapter {
                 intent.putExtra("INVENTORY_ALLOCATED", String.valueOf(resources.getInventory_allocated()));
                 intent.putExtra("INVENTORY_AVAILABLE", String.valueOf(resources.getInventory_available()));
                 intent.putExtra("INVENTORY_RECEIVED", String.valueOf(resources.getInventory_received()));
-                intent.putExtra("SUBCOUNTY_CODE", String.valueOf(resources.getCommittee_id()));
+                intent.putExtra("HEALTHFACILITY_CODE", String.valueOf(resources.getCommittee_id()));
                 context.startActivity(intent);
             }
         });
