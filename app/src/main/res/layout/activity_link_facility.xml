@@ -74,6 +74,20 @@
                 android:textSize="16dp"
                 android:layout_toEndOf="@+id/profile"></TextView>
 
+            <TextView
+                android:id="@+id/role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tel"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="0dp"
+                android:layout_toRightOf="@+id/profile"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#ffff"
+                android:textSize="16dp"
+                android:layout_toEndOf="@+id/profile"></TextView>
+
 
             <ImageView
                 android:layout_width="16dp"

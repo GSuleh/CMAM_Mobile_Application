@@ -37,7 +37,6 @@
         <activity android:name=".RoleManagement" />
         <activity android:name=".SubCounties" />
         <activity android:name=".UserManagement" />
-        <activity android:name=".SubCountyCHU" />
         <activity android:name=".Guidelines" />
         <activity android:name=".PostDischarge" />
         <activity android:name=".Referrals" />
