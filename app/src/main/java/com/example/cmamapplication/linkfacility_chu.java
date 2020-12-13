@@ -59,9 +59,9 @@ public class linkfacility_chu extends AppCompatActivity {
                                 Hospital hospitalclass = ds.getValue(Hospital.class);
                                 if (hospitalclass != null) {
 
-                                    subcounty = hospitalclass.Sub_county;
+                                    subcounty = hospitalclass.Officialname;
 
-                                    reference.orderByChild("Facility_subcounty").equalTo(subcounty).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    reference.orderByChild("Facility").equalTo(subcounty).addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             for(DataSnapshot ds:snapshot.getChildren())
