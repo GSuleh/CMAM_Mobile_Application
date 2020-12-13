@@ -43,7 +43,7 @@ public class LinkFacility extends AppCompatActivity implements View.OnClickListe
         chus = (CardView) findViewById(R.id.chucard);
         chus.setOnClickListener(this);
 
-        referals = (CardView) findViewById(R.id.hf_card);
+        referals = (CardView) findViewById(R.id.referralscard);
         referals.setOnClickListener(this);
 
         resources = (CardView) findViewById(R.id.resourcecard);
@@ -88,13 +88,13 @@ public class LinkFacility extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.chucard:
-                startActivity(new Intent(this, chu.class));
+                startActivity(new Intent(this, linkfacility_chu.class));
                 break;
             case R.id.referralscard:
                 startActivity(new Intent(this, Referrals.class));
                 break;
             case R.id.resourcecard:
-                startActivity(new Intent(this, resources.class));
+                startActivity(new Intent(this, linkfacilityresources.class));
                 break;
             case R.id.analyticscard:
                 startActivity(new Intent(this, Analytics.class));

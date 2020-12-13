@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapSubcountyAllocateResources"></activity>
+        <activity android:name=".linkfacilityresources"></activity>
+        <activity android:name=".linkfacility_chu" />
+        <activity android:name=".MapSubcountyAllocateResources" />
         <activity android:name=".SubcountyAllocateResources" />
         <activity android:name=".MapRequestResourceActivity" />
         <activity android:name=".RequestResource" />

@@ -33,7 +33,7 @@ public class SubcountyAllocateResources extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subcounty_allocate_resources);
 
-        recyclerview = (RecyclerView) findViewById(R.id.request_recyclerview);
+        recyclerview = (RecyclerView) findViewById(R.id.subcounty_allocate_recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         resourceData = new ArrayList<>();
 
