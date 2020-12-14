@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MapCommitteeResourceActivity extends AppCompatActivity {
+public class MapChvResources extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map_committee_resource);
+        setContentView(R.layout.activity_map_chv_resources);
     }
 }

@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class CHO extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView screening, pat, resources, analytics, out;
+    private CardView chvs, pat, resources, analytics, out;
     private RelativeLayout profile;
 
     private FirebaseUser user;
@@ -42,8 +42,8 @@ public class CHO extends AppCompatActivity implements View.OnClickListener {
         final TextView phone = (TextView) findViewById(R.id.tel);
         final TextView userrole = (TextView) findViewById(R.id.role);
 
-        screening = (CardView) findViewById(R.id.screeningcard);
-        screening.setOnClickListener( this);
+        chvs = (CardView) findViewById(R.id.chvscard);
+        chvs.setOnClickListener( this);
 
         pat = (CardView) findViewById(R.id.patientcard);
         pat.setOnClickListener( this);
@@ -87,14 +87,14 @@ public class CHO extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.screeningcard:
-                startActivity(new Intent(this, New_Patient.class));
+            case R.id.chvscard:
+                startActivity(new Intent(this, ListCHVs.class));
                 break;
             case R.id.patientcard:
                 startActivity(new Intent(this, Patients.class));
                 break;
             case R.id.resourcecard:
-                startActivity(new Intent(this, resources.class));
+                startActivity(new Intent(this, choresources.class));
                 break;
             case R.id.analyticscard:
                 startActivity(new Intent(this, Analytics.class));
@@ -102,7 +102,7 @@ public class CHO extends AppCompatActivity implements View.OnClickListener {
             case R.id.personaldetails:
                 startActivity(new Intent(this, profile.class));
                 break;
-            case R.id.signout:
+            case R.id.signoutcard:
                 userLogout();
                 break;
         }

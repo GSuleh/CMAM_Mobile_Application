@@ -10,7 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapHealthFacilityAllocateResources"></activity>
+        <activity android:name=".MapChvResources"></activity>
+        <activity android:name=".choresources" />
+        <activity android:name=".MapChvsActivity" />
+        <activity android:name=".ListCHVs" />
+        <activity android:name=".MapHealthFacilityAllocateResources" />
         <activity android:name=".HealthFacilityAllocateResource" />
         <activity android:name=".linkfacilityresources" />
         <activity android:name=".linkfacility_chu" />
@@ -26,7 +30,6 @@
         <activity android:name=".MapAllocateResourceActivity" />
         <activity android:name=".MapUpdateResourceActivity" />
         <activity android:name=".MapUserRoleActivity" />
-        <activity android:name=".MapCommitteeResourceActivity" />
         <activity android:name=".MapUserCHUActivity" />
         <activity android:name=".MapUserLinkFacilityActivity" />
         <activity android:name=".MapUserSubCountyActivity" />

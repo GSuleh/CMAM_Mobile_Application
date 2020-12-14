@@ -133,7 +133,7 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/screeningcard"
+            android:id="@+id/chvscard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -174,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="80dp"
-                    android:text="@string/startscreening"
+                    android:text="@string/chvs"
                     android:textSize="18sp"
                     android:textColor="@color/lightext"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +188,7 @@
                     android:layout_marginBottom="12dp"
                     android:ellipsize="end"
                     android:maxLines="2"
-                    android:text="@string/screeningdesc"
+                    android:text="@string/chodesc"
                     android:textSize="12sp"
                     android:textColor="@color/lightext"
                     app:layout_constraintBottom_toBottomOf="parent"

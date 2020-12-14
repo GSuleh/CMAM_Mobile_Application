@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapHealthFacilityAllocateResources">
+    tools:context=".MapChvsActivity">
 
     <RelativeLayout
         android:id="@+id/relative"
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Assign Resource"
+            android:text="CHVs"
             android:textColor="#000000"
             android:textSize="24sp"></TextView>
 
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:layout_marginTop="15dp"
-        android:text="@string/assignresource"
+        android:text="@string/assignrole"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="italic"
@@ -58,7 +58,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:text="@string/chu"
+        android:text="@string/code"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -66,98 +66,77 @@
         app:layout_constraintTop_toBottomOf="@+id/bannerdescription"
         android:autofillHints="" />
 
-    <Spinner
-        android:id="@+id/chusspinner"
+    <EditText
+        android:id="@+id/assignedcommittee"
         android:layout_width="350dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/code"
+        android:inputType="none"
+        android:focusable="false"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnertextview"
         android:autofillHints="" />
 
     <TextView
-        android:id="@+id/textviewserial"
+        android:id="@+id/textviewemail"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:text="@string/serialno"
+        android:text="@string/email_address"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chusspinner"
+        app:layout_constraintTop_toBottomOf="@+id/assignedcommittee"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/assignedserial"
+        android:id="@+id/assignedemail"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="@string/serialno"
+        android:hint="@string/email"
         android:inputType="none"
         android:focusable="false"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textviewserial"
+        app:layout_constraintTop_toBottomOf="@+id/textviewemail"
         android:autofillHints="" />
 
     <TextView
-        android:id="@+id/addinventorytextview"
+        android:id="@+id/textviewrole"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:text="@string/amount"
+        android:text="@string/role"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/assignedserial"
+        app:layout_constraintTop_toBottomOf="@+id/assignedemail"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/addinventory"
+        android:id="@+id/assignedrole"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:inputType="number"
+        android:hint="@string/role"
+        android:inputType="none"
+        android:focusable="false"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addinventorytextview"
+        app:layout_constraintTop_toBottomOf="@+id/textviewrole"
         android:autofillHints="" />
-
-
-    <Button
-        android:id="@+id/assignresource"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/bg"
-        android:text="@string/assignresource"
-        android:textSize="24sp"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addinventory"
-        tools:targetApi="lollipop"/>
-
-    <ProgressBar
-        android:id="@+id/progressbar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        tools:ignore = "MissingConstraint"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

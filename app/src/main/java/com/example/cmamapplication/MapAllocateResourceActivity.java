@@ -152,10 +152,7 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
                     reference1.child(id).child("inventory_received").setValue(rcvd);
                     reference1.child(id).child("inventory_allocated").setValue(all);
 
-                    resource = new ResourceClass(type,name,code, committee_id,amt,amt,amt, allocate,max, min);
-                    reference1.push().setValue(resource);
-                    Toast.makeText(MapAllocateResourceActivity.this, "worked!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(MapAllocateResourceActivity.this, resources.class));
+
                 }
             }
 
@@ -164,6 +161,11 @@ public class MapAllocateResourceActivity extends AppCompatActivity implements Vi
 
             }
         });
+
+        resource = new ResourceClass(type,name,code, committee_id,amt,amt,amt, allocate,max, min);
+        reference1.push().setValue(resource);
+        Toast.makeText(MapAllocateResourceActivity.this, "worked!", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(MapAllocateResourceActivity.this, resources.class));
     }
 
     private void getCommitteeID() {

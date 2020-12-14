@@ -116,4 +116,6 @@
     <string name="requestresource">Request for Resource</string>
     <string name="subcountycode">SubCounty Code</string>
     <string name="healthfacilities">Health Facility</string>
+    <string name="chvs">Community Health Volunteers</string>
+    <string name="chodesc">List of community health volunteers operating within your Community Health Unit</string>
 </resources>

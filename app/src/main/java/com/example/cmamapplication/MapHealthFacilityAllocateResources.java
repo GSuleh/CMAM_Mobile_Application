@@ -82,9 +82,9 @@ public class MapHealthFacilityAllocateResources extends AppCompatActivity implem
                                     Hospital data = ds.getValue(Hospital.class);
                                 if (data != null) {
 
-                                    subcounty = data.Sub_county;
+                                    subcounty = data.Officialname;
 
-                                    ref1.orderByChild("Facility_subcounty").equalTo(subcounty).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    ref1.orderByChild("Facility").equalTo(subcounty).addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             for(DataSnapshot ds:snapshot.getChildren())
@@ -191,7 +191,7 @@ public class MapHealthFacilityAllocateResources extends AppCompatActivity implem
 
         amt = Long.valueOf(amount.getText().toString().trim());
         avlbl = Long.valueOf(available) - amt;
-        rcvd = Long.valueOf(recieved) - amt;
+        rcvd = Long.valueOf(recieved);
         all = Long.valueOf(allocated) + amt;
         final Long allocate = Long.valueOf(0);
         final Long max = Long.valueOf(10000);
@@ -211,10 +211,7 @@ public class MapHealthFacilityAllocateResources extends AppCompatActivity implem
                     reference1.child(id).child("inventory_received").setValue(rcvd);
                     reference1.child(id).child("inventory_allocated").setValue(all);
 
-                    resource = new ResourceClass(type,name,code, committee_id,amt,amt,amt, allocate,max, min);
-                    reference1.push().setValue(resource);
-                    Toast.makeText(MapHealthFacilityAllocateResources.this, "worked!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(MapHealthFacilityAllocateResources.this, linkfacilityresources.class));
+
                 }
             }
 
@@ -223,5 +220,9 @@ public class MapHealthFacilityAllocateResources extends AppCompatActivity implem
 
             }
         });
+        resource = new ResourceClass(type,name,code, committee_id,amt,amt,amt, allocate,max, min);
+        reference1.push().setValue(resource);
+        Toast.makeText(MapHealthFacilityAllocateResources.this, "worked!", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(MapHealthFacilityAllocateResources.this, linkfacilityresources.class));
     }
 }

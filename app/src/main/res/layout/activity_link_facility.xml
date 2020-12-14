@@ -38,8 +38,9 @@
         <RelativeLayout
             android:id="@+id/personaldetails"
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@drawable/bg0">
+            android:layout_height="100dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/bg">
 
             <ImageView
                 android:id="@+id/profile"

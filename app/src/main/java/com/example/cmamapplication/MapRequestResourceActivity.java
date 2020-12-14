@@ -111,27 +111,13 @@ public class MapRequestResourceActivity extends AppCompatActivity implements Vie
 
     private void requestResource() {
 
-        reference1.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                    Long rmg = Long.valueOf(String.valueOf(subcountycode.getText()));
-                    Long amt = Long.valueOf(String.valueOf(amount.getText()));
+        Long rmg = Long.valueOf(String.valueOf(subcountycode.getText()));
+        Long amt = Long.valueOf(String.valueOf(amount.getText()));
 
-                    String result_4_str=(subcounty+"").substring(0, 2);
-                    Long rmd = Long.parseLong(result_4_str);
+        requestresource = new Request(rmg,rmg,code,amt,null);
+        reference1.push().setValue(requestresource);
 
-                    requestresource = new Request(rmg,rmd,code,amt,null);
-                    reference1.push().setValue(requestresource);
-                    Toast.makeText(MapRequestResourceActivity.this, "worked!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(MapRequestResourceActivity.this, subcountyresources.class));
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        Toast.makeText(MapRequestResourceActivity.this, "worked!", Toast.LENGTH_LONG).show();
     }
 }
