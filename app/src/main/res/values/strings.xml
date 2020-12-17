@@ -128,4 +128,11 @@
     <string name="severity">Severity</string>
     <string name="armcirc">Arm Circumference</string>
     <string name="muac">Middle and Upper Arm Circumference</string>
+    <string name="caregiver_name">Care Giver\'s Name</string>
+    <string name="child_s_name">Child\'s Name</string>
+    <string name="children_0_59_months">Children 0-59 months</string>
+    <string name="childassessmentdesc">Begin assessment for children between the ages of 0 - 59 months.</string>
+    <string name="pregnant_and_lactating_women">Pregnant and lactating women</string>
+    <string name="plwdesc">Begin assessment for pregnant and lactating women (PLWs).</string>
+    <string name="pregnant">Pregnant</string>
 </resources>

@@ -87,7 +87,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.screeningcard:
-                startActivity(new Intent(this, New_Patient.class));
+                startActivity(new Intent(this, AssessmentGroupActivity.class));
                 break;
             case R.id.patientcard:
                 startActivity(new Intent(this, Patients.class));

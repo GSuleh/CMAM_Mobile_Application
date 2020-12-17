@@ -2,7 +2,7 @@ package com.example.cmamapplication;
 
 public class Biodata {
 
-    public String age, height, weight, gender, oedema, arm_circumference, MUAC, temperature, respiratory_rate, tidal_volume, minute_volume, vital_capacity, date_created, date_updated;
+    public String age, height, weight, gender, oedema, arm_circumference, muac, temperature, respiratory_rate, tidal_volume, minute_volume, vital_capacity, date_created, date_updated;
     public String patient_id;
 
     public Biodata() {
@@ -56,12 +56,12 @@ public class Biodata {
         this.arm_circumference = arm_circumference;
     }
 
-    public String getMUAC() {
-        return MUAC;
+    public String getMuac() {
+        return muac;
     }
 
-    public void setMUAC(String MUAC) {
-        this.MUAC = MUAC;
+    public void setMuac(String muac) {
+        this.muac = muac;
     }
 
     public String getTemperature() {

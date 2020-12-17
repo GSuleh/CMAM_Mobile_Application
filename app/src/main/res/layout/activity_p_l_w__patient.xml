@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".New_Patient">
+    tools:context=".PLW_Patient">
 
     <RelativeLayout
         android:id="@+id/relative"
@@ -56,7 +56,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:text="@string/child_s_name"
+        android:text="@string/name"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -79,33 +79,7 @@
         android:autofillHints="" />
 
 
-    <TextView
-        android:id="@+id/guardiannametextview"
-        android:layout_width="350dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:text="@string/caregiver_name"
-        android:textSize="24sp"
-        android:textColor="#000000"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullname"
-        android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/guardian_name"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/caregiver_name"
-        android:inputType="text"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardiannametextview"
-        android:autofillHints="" />
 
     <TextView
         android:id="@+id/guardianteltextview"
@@ -118,7 +92,7 @@
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardian_name"
+        app:layout_constraintTop_toBottomOf="@+id/fullname"
         android:autofillHints="" />
 
     <EditText

@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MuacTestResultActivity"></activity>
+        <activity android:name=".PLW_Patient"></activity>
+        <activity android:name=".AssessmentGroupActivity" />
+        <activity android:name=".MuacTestResultActivity" />
         <activity android:name=".MuacTestActivity" />
         <activity android:name=".OedemaTestActivity" />
         <activity android:name=".BiodataActivity" />

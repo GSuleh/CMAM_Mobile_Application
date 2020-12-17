@@ -115,7 +115,7 @@ public class MuacTestActivity extends AppCompatActivity implements View.OnClickL
 
                     } else{
 
-                        test = new Test(uid,"MUAC","Middle Upper Arm Circumference",armcirc.getText().toString(),"MAM",currentDateandTime);
+                        test = new Test(uid,"MUAC","Middle Upper Arm Circumference",armcirc.getText().toString(),"Normal",currentDateandTime);
                         reference.push().setValue(test);
                         progressBar.setVisibility(View.VISIBLE);
 
