@@ -2,22 +2,74 @@ package com.example.cmamapplication;
 
 public class Patient {
 
-    public String firstname, lastname, guardian_name, guardian_email, guardian_phone, guardian_id, county, sub_county, ward, doctor_id, role;
+    public String fullname, guardian_name,  guardian_phone, treatment_group,  chv_id;
+    public Long guardian_nat_id, chu_code;
 
     public Patient(){}
 
-    public Patient(String firstname, String lastname, String guardian_name, String guardian_email, String guardian_phone,String guardian_id, String county, String sub_county, String ward, String doctor_id, String role){
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.guardian_name = guardian_name;
-        this.guardian_email= guardian_email;
-        this.guardian_phone = guardian_phone;
-        this.guardian_id = guardian_id;
-        this.county = county;
-        this.sub_county = sub_county;
-        this.ward = ward;
-        this.doctor_id = doctor_id;
-        this.role = role;
+    public String getFullname() {
+        return fullname;
+    }
 
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getGuardian_name() {
+        return guardian_name;
+    }
+
+    public void setGuardian_name(String guardian_name) {
+        this.guardian_name = guardian_name;
+    }
+
+    public String getGuardian_phone() {
+        return guardian_phone;
+    }
+
+    public void setGuardian_phone(String guardian_phone) {
+        this.guardian_phone = guardian_phone;
+    }
+
+    public String getTreatment_group() {
+        return treatment_group;
+    }
+
+    public void setTreatment_group(String treatment_group) {
+        this.treatment_group = treatment_group;
+    }
+
+    public Long getGuardian_nat_id() {
+        return guardian_nat_id;
+    }
+
+    public void setGuardian_nat_id(Long guardian_nat_id) {
+        this.guardian_nat_id = guardian_nat_id;
+    }
+
+    public Long getChu_code() {
+        return chu_code;
+    }
+
+    public void setChu_code(Long chu_code) {
+        this.chu_code = chu_code;
+    }
+
+    public String getChv_id() {
+        return chv_id;
+    }
+
+    public void setChv_id(String chv_id) {
+        this.chv_id = chv_id;
+    }
+
+    public Patient(String fullname, String guardian_name, String guardian_phone, String treatment_group, Long guardian_nat_id, Long chu_code, String chv_id) {
+        this.fullname = fullname;
+        this.guardian_name = guardian_name;
+        this.guardian_phone = guardian_phone;
+        this.treatment_group = treatment_group;
+        this.guardian_nat_id = guardian_nat_id;
+        this.chu_code = chu_code;
+        this.chv_id = chv_id;
     }
 }

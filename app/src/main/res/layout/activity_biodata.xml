@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".New_Patient">
+    tools:context=".BiodataActivity">
 
     <RelativeLayout
         android:id="@+id/relative"
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Begin Assessment"
+            android:text="Enter Bio Data"
             android:textColor="#000000"
             android:textSize="24sp"></TextView>
 
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Personal Details"
+        android:text="Bio Data"
         android:textAlignment="center"
         android:layout_marginTop="60dp"
         android:textSize="24sp"
@@ -51,12 +51,12 @@
 
     <!--suppress AndroidDomInspection -->
     <TextView
-        android:id="@+id/fnametextview"
+        android:id="@+id/agetextview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:text="@string/fullname"
+        android:text="@string/age"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -65,111 +65,109 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/fullname"
+        android:id="@+id/age"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/fullname"
+        android:hint="@string/age"
         android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fnametextview"
+        app:layout_constraintTop_toBottomOf="@+id/agetextview"
         android:autofillHints="" />
 
 
     <TextView
-        android:id="@+id/guardiannametextview"
+        android:id="@+id/heighttextview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:text="@string/guardian_name"
+        android:text="@string/height"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullname"
+        app:layout_constraintTop_toBottomOf="@+id/age"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/guardian_name"
+        android:id="@+id/height"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/guardian_name"
-        android:inputType="text"
+        android:hint="@string/height"
+        android:inputType="numberDecimal"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardiannametextview"
+        app:layout_constraintTop_toBottomOf="@+id/heighttextview"
         android:autofillHints="" />
 
     <TextView
-        android:id="@+id/guardianteltextview"
+        android:id="@+id/weighttextview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:text="@string/guardian_phone"
+        android:text="@string/weight"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardian_name"
+        app:layout_constraintTop_toBottomOf="@+id/height"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/guardian_phone"
+        android:id="@+id/weight"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/guardian_phone"
-        android:inputType="text"
+        android:hint="@string/weight"
+        android:inputType="numberDecimal"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardianteltextview"
+        app:layout_constraintTop_toBottomOf="@+id/weighttextview"
         android:autofillHints="" />
 
     <TextView
-        android:id="@+id/nationalidtextview"
+        android:id="@+id/gendertextview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:text="@string/nationalid"
+        android:text="@string/gender"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guardian_phone"
+        app:layout_constraintTop_toBottomOf="@+id/weight"
         android:autofillHints="" />
 
-    <EditText
-        android:id="@+id/nationalid"
+    <Spinner
+        android:id="@+id/gender"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/guardian_id"
-        android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nationalidtextview"
+        app:layout_constraintTop_toBottomOf="@+id/gendertextview"
         android:autofillHints="" />
 
 
 
     <Button
-        android:id="@+id/newpatient"
+        android:id="@+id/addbiodata"
         android:layout_width="350dp"
         android:layout_height="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/bg"
         android:text="@string/next"
         android:textSize="24sp"
@@ -177,7 +175,7 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nationalid"
+        app:layout_constraintTop_toBottomOf="@+id/gender"
         tools:targetApi="lollipop"/>
 
     <ProgressBar

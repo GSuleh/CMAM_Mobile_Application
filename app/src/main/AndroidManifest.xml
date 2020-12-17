@@ -10,7 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapChvResources"></activity>
+        <activity android:name=".MuacTestResultActivity"></activity>
+        <activity android:name=".MuacTestActivity" />
+        <activity android:name=".OedemaTestActivity" />
+        <activity android:name=".BiodataActivity" />
+        <activity android:name=".MapChvResources" />
         <activity android:name=".choresources" />
         <activity android:name=".MapChvsActivity" />
         <activity android:name=".ListCHVs" />
