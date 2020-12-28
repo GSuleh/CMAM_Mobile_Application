@@ -135,4 +135,9 @@
     <string name="pregnant_and_lactating_women">Pregnant and lactating women</string>
     <string name="plwdesc">Begin assessment for pregnant and lactating women (PLWs).</string>
     <string name="pregnant">Pregnant</string>
+    <string name="plwstatus">PLW Status</string>
+    <string name="weight_to_height_score">Weight to Height score</string>
+    <string name="malnutrition_rate">Malnutrition Rate</string>
+    <string name="treatment">Treatment</string>
+    <string name="duration">Duration</string>
 </resources>

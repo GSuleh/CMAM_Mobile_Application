@@ -137,6 +137,32 @@
         app:layout_constraintTop_toBottomOf="@+id/nationalidtextview"
         android:autofillHints="" />
 
+    <TextView
+        android:id="@+id/plwtextview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:text="@string/plwstatus"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nationalid"
+        android:autofillHints="" />
+
+    <Spinner
+        android:id="@+id/plw"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plwtextview"
+        android:autofillHints="" />
+
 
 
     <Button
@@ -151,7 +177,7 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nationalid"
+        app:layout_constraintTop_toBottomOf="@+id/plw"
         tools:targetApi="lollipop"/>
 
     <ProgressBar

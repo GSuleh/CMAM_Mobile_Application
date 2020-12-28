@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Check for Bilateral Oedema"
+            android:text="Treatment"
             android:textColor="#000000"
             android:textSize="24sp"></TextView>
 
@@ -38,9 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text=" Formally test for
-oedema with finger
-pressure"
+        android:text=" Assign Tretment type Automatically based on test results"
         android:textAlignment="center"
         android:layout_marginTop="90dp"
         android:textSize="24sp"
@@ -53,12 +51,12 @@ pressure"
 
     <!--suppress AndroidDomInspection -->
     <TextView
-        android:id="@+id/armcirctextview"
+        android:id="@+id/treatmenttextview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:text="@string/muac"
+        android:text="@string/treatment"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -67,19 +65,46 @@ pressure"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/armcirc"
+        android:id="@+id/treatment"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/armcirc"
+        android:hint="@string/treatment"
         android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/armcirctextview"
+        app:layout_constraintTop_toBottomOf="@+id/treatmenttextview"
         android:autofillHints="" />
 
+    <TextView
+        android:id="@+id/durationtextview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:text="@string/duration"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/duration"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/duration"
+        android:inputType="text"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/durationtextview"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/muactest"
