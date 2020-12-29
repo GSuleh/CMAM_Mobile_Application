@@ -29,7 +29,7 @@ public class OedemaTestActivity extends AppCompatActivity implements AdapterView
 
     private Spinner spinner;
     private DatabaseReference reference,reference1;
-    String[] severity = {"Select severity", "Mild", "Moderate","Severe"};
+    String[] severity = {"Select severity","Normal", "Mild", "Moderate","Severe"};
     Test test;
 
     String uid;

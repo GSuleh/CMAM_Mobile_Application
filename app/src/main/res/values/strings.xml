@@ -140,4 +140,6 @@
     <string name="malnutrition_rate">Malnutrition Rate</string>
     <string name="treatment">Treatment</string>
     <string name="duration">Duration</string>
+    <string name="household">Household</string>
+    <string name="location">Location</string>
 </resources>

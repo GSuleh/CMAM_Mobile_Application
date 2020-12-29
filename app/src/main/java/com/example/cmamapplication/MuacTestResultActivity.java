@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MuacTestResultActivity extends AppCompatActivity implements View.OnClickListener {
@@ -32,6 +33,8 @@ public class MuacTestResultActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muac_test_result);
 
+        reference = FirebaseDatabase.getInstance().getReference("Test");
+        reference1 = FirebaseDatabase.getInstance().getReference("Biodata");
 
         muac = findViewById(R.id.armcirc);
         whz = findViewById(R.id.whs);
@@ -89,7 +92,7 @@ public class MuacTestResultActivity extends AppCompatActivity implements View.On
 
     private void startTreatment() {
 
-        Intent intent = new Intent(MuacTestResultActivity.this, MuacTestResultActivity.class);
+        Intent intent = new Intent(MuacTestResultActivity.this, TreatmentActivity.class);
         intent.putExtra("BIODATA_ID", uid);
         MuacTestResultActivity.this.startActivity(intent);
 
