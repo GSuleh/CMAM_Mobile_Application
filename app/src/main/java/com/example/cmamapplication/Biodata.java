@@ -2,10 +2,18 @@ package com.example.cmamapplication;
 
 public class Biodata {
 
-    public String age, height, weight, gender, oedema, arm_circumference, MUAC, temperature, respiratory_rate, tidal_volume, minute_volume, vital_capacity, date_created, date_updated;
+    public String dob, age, height, weight, gender, oedema, arm_circumference, muac, temperature, respiratory_rate, tidal_volume, minute_volume, vital_capacity, date_created, date_updated;
     public String patient_id;
 
     public Biodata() {
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public String getAge() {
@@ -56,12 +64,12 @@ public class Biodata {
         this.arm_circumference = arm_circumference;
     }
 
-    public String getMUAC() {
-        return MUAC;
+    public String getMuac() {
+        return muac;
     }
 
-    public void setMUAC(String MUAC) {
-        this.MUAC = MUAC;
+    public void setMuac(String MUAC) {
+        this.muac = MUAC;
     }
 
     public String getTemperature() {
@@ -128,7 +136,8 @@ public class Biodata {
         this.patient_id = patient_id;
     }
 
-    public Biodata(String age, String height, String weight, String gender,  String patient_id, String date_created) {
+    public Biodata(String dob, String age, String height, String weight, String gender,  String patient_id, String date_created) {
+        this.dob = dob;
         this.age = age;
         this.height = height;
         this.weight = weight;

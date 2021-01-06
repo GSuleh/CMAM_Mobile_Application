@@ -6,4 +6,177 @@
     android:layout_height="match_parent"
     tools:context=".PrescriptionActivity">
 
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Prescription"
+            android:textColor="#000000"
+            android:textSize="24sp"></TextView>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu"
+            android:contentDescription="@string/todo">
+
+        </ImageView>
+    </RelativeLayout>
+
+
+    <!--suppress AndroidDomInspection -->
+    <TextView
+        android:id="@+id/vitaminatextview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="90dp"
+        android:ems="10"
+        android:text="@string/vitamin_a"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_horizontal"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/vitamina"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/vitamin_a"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vitaminatextview"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/albendazoleview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/albendazole"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vitamina"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/albendazole"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/albendazole"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/albendazoleview"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/measlestextview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/measles_vaccine"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/albendazole"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/measles"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/measles_vaccine"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/measlestextview"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/plumpytextview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/plumpy_suppliment_packets"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/measles"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/plumpy"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/plumpy_suppliment_packets"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plumpytextview"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/prescription"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg"
+        android:text="Prescribe"
+        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plumpy"
+        tools:targetApi="lollipop"/>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:ignore = "MissingConstraint"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

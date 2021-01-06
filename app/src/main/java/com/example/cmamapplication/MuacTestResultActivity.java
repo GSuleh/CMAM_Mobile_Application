@@ -55,7 +55,7 @@ public class MuacTestResultActivity extends AppCompatActivity implements View.On
                 if (biodata != null) {
 
                     armcirc = biodata.arm_circumference;
-                    malrates = biodata.MUAC;
+                    malrates = biodata.muac;
                     whzscore = biodata.weight;
 
                     muac.setText(armcirc);

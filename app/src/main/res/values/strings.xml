@@ -142,4 +142,9 @@
     <string name="duration">Duration</string>
     <string name="household">Household</string>
     <string name="location">Location</string>
+    <string name="dob">Date of Birth</string>
+    <string name="vitamin_a">Vitamin A</string>
+    <string name="albendazole">Albendazole</string>
+    <string name="measles_vaccine">Measles Vaccine</string>
+    <string name="plumpy_suppliment_packets">Plumpy Suppliment Packets</string>
 </resources>

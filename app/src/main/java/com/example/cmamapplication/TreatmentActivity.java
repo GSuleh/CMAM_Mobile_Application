@@ -57,14 +57,23 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
                 if (biodata != null) {
 
                     patient_id = biodata.patient_id;
-                    malnutrition_rate = biodata.MUAC;
+                    malnutrition_rate = biodata.muac;
                     oedema = biodata.oedema;
+
 
                     if(malnutrition_rate.equals("MAM") && oedema.equals("Normal")){
                         treatment.setText("TSFP");
                         duration.setText("3 months");
                     }
-                    else if(malnutrition_rate.equals("SAM") && oedema.equals("Mild")  || oedema.equals("Moderate")) {
+                    else if(malnutrition_rate.equals("MAM") && oedema.equals("Mild")) {
+                        treatment.setText("TSFP");
+                        duration.setText("3 months");
+                    }
+                    else if(malnutrition_rate.equals("SAM") && oedema.equals("Mild")) {
+                        treatment.setText("OTP");
+                        duration.setText("4 months");
+                    }
+                    else if(malnutrition_rate.equals("SAM") && oedema.equals("Moderate")) {
                         treatment.setText("OTP");
                         duration.setText("4 months");
                     }
@@ -118,9 +127,10 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
         treat = new Treatment(treatment.getText().toString(), patient_id, duration.getText().toString(), currentDateandTime, currentDateandTime, "Active",Long.valueOf(0));
         reference.push().setValue(treat);
 
-        Toast.makeText(TreatmentActivity.this, "Patient is perfectly healthy.", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(TreatmentActivity.this, Prescription.class);
+        Intent intent = new Intent(TreatmentActivity.this, PrescriptionActivity.class);
         intent.putExtra("BIODATA_ID", uid);
+        intent.putExtra("PATIENT_ID", patient_id);
+        intent.putExtra("TREATMENT", treatment.getText().toString());
         TreatmentActivity.this.startActivity(intent);
     }
 }

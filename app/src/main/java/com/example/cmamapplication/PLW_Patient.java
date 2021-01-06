@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,18 +21,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class PLW_Patient extends AppCompatActivity implements View.OnClickListener {
+public class PLW_Patient extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
+    private Spinner spinner;
     private FirebaseUser user;
     private DatabaseReference reference, reference1;
     private Patient patient;
 
     private EditText fullname, national_id, guardianphone;
-    private String uid;
+    private String uid, item;
     private Long committee;
     private Button addPatient;
     private ProgressBar progressBar;
 
+    String[] plw = {"Select Status", "Pregnant", "Lactating"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +50,14 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
         guardianphone = findViewById(R.id.guardian_phone);
 
         national_id = findViewById(R.id.nationalid);
+
+        spinner = (Spinner) findViewById(R.id.plw);
+        spinner.setOnItemSelectedListener(this);
+
+        ArrayAdapter array = new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,plw);
+        array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(array);
 
         addPatient = (Button) findViewById(R.id.newpatient);
         addPatient.setOnClickListener(this);
@@ -71,7 +84,7 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
 
                 final String tel = guardianphone.getText().toString().trim();
                 final Long id = Long.valueOf(String.valueOf(national_id.getText()));
-                patient = new Patient(fullname.getText().toString(), null, tel, null, id, committee, uid);
+                patient = new Patient(fullname.getText().toString(), null, tel, "Pregnant and lactating women", id, committee, uid,spinner.getSelectedItem().toString());
                 reference1.push().setValue(patient);
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -87,5 +100,15 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
 
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        item = spinner.getSelectedItem().toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

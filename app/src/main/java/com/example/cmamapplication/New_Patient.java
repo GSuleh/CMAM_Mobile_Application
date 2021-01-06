@@ -75,7 +75,7 @@ public class New_Patient extends AppCompatActivity implements View.OnClickListen
 
                     final String tel = guardianphone.getText().toString().trim();
                     final Long id = Long.valueOf(String.valueOf(national_id.getText()));
-                    patient = new Patient(fullname.getText().toString(),guardianname.getText().toString(),tel,null,id,committee,uid);
+                    patient = new Patient(fullname.getText().toString(),guardianname.getText().toString(),tel,null,id,committee,uid,null);
                     reference1.push().setValue(patient);
                     progressBar.setVisibility(View.VISIBLE);
 
