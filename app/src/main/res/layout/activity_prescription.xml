@@ -65,6 +65,19 @@
         app:layout_constraintTop_toBottomOf="@+id/vitaminatextview"
         android:autofillHints="" />
 
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/committeeid"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/albendazoleview"
         android:layout_width="350dp"
