@@ -32,8 +32,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
     User users;
     ResourceClass resource;
     Prescription prescription;
-    ResourceClass[] elements;
-    String uid, id, patient_id, treatment, treatment_group, age,dob, malnutrition_rate, oedema;
+    String bioid, uid, id, patient_id, treatment, treatment_group, age,dob, malnutrition_rate, oedema;
     Long committeeid;
 
     private EditText vitamin, albendazole, measles, plumpy, comid;
@@ -66,7 +65,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
 
         getIncomingIntent();
 
-        reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child(bioid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 biodata = snapshot.getValue(Biodata.class);
@@ -126,7 +125,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        reference.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference3.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 users = snapshot.getValue(User.class);
@@ -134,7 +133,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
                 if (users != null) {
 
                     committeeid = users.committee_id;
-
+                    comid.setText(committeeid.toString());
                 }
             }
 
@@ -152,7 +151,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
     private void getIncomingIntent() {
         if (getIntent().hasExtra("BIODATA_ID")) {
 
-            uid = getIntent().getStringExtra("BIODATA_ID");
+            bioid = getIntent().getStringExtra("BIODATA_ID");
             patient_id = getIntent().getStringExtra("PATIENT_ID");
             treatment = getIntent().getStringExtra("TREATMENT");
 
@@ -162,7 +161,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.addbiodata:
+            case R.id.prescription:
                 Prescribe();
                 break;
         }
@@ -173,7 +172,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
         final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
         final String currentDateandTime = sdf.format(new Date());
 
-        reference2.orderByChild("committee_id").equalTo(committeeid).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference2.orderByChild("committee_id").equalTo(comid.getText().toString()).addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -207,7 +206,11 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        prescription = new Prescription(patient_id,vitamintxt.getText().toString(),albendazoletxt.getText().toString(),measlestxt.getText().toString(),plumpytxt.getText().toString(),currentDateandTime,Long.valueOf(vitamin.getText().toString()),Long.valueOf(albendazole.getText().toString()),Long.valueOf(measles.getText().toString()),Long.valueOf("1"),Long.valueOf(plumpy.getText().toString()),null,null,null,null,null,null,null,null,null,null);
+        prescription = new Prescription(patient_id,vitamintxt.getText().toString(),albendazoletxt.getText().toString(),measlestxt.getText().toString(),plumpytxt.getText().toString(),currentDateandTime,Long.valueOf(vitamin.getText().toString()),Long.valueOf(albendazole.getText().toString()),Long.valueOf(measles.getText().toString()),Long.valueOf("1"),Long.valueOf(plumpy.getText().toString()),null,null,null,null,null,null,null,null,null,null,null,null);
         reference1.push().setValue(prescription);
+
+        Intent intent = new Intent(PrescriptionActivity.this, FollowupActivity.class);
+        intent.putExtra("PATIENT_ID", patient_id);
+        PrescriptionActivity.this.startActivity(intent);
     }
 }

@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Test Results"
+            android:text="Prescription"
             android:textColor="#000000"
             android:textSize="24sp"></TextView>
 
@@ -33,120 +33,234 @@
         </ImageView>
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/banner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text=" Test Results"
-        android:textAlignment="center"
-        android:layout_marginTop="90dp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_gravity="center_horizontal" />
 
     <!--suppress AndroidDomInspection -->
     <TextView
-        android:id="@+id/armcirctextview"
+        android:id="@+id/vitaminatextview"
         android:layout_width="350dp"
         android:layout_height="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="90dp"
         android:ems="10"
-        android:text="MUAC score"
+        android:text="@string/vitamin_a"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_horizontal"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/armcirc"
+        android:id="@+id/vitamina"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/armcirc"
-        android:inputType="text"
+        android:hint="@string/vitamin_a"
+        android:focusable="false"
+        android:inputType="none"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/armcirctextview"
+        app:layout_constraintTop_toBottomOf="@+id/vitaminatextview"
         android:autofillHints="" />
 
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/committeeid"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/treatgroup"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/pregnant"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
+
     <TextView
-        android:id="@+id/whsview"
+        android:id="@+id/ironview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:text="@string/weight_to_height_score"
+        android:text="@string/ironpluss"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/armcirc"
+        app:layout_constraintTop_toBottomOf="@+id/vitamina"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/whs"
+        android:id="@+id/iron"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/weight_to_height_score"
-        android:inputType="text"
+        android:hint="@string/ironpluss"
+        android:focusable="false"
+        android:inputType="none"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/whsview"
+        app:layout_constraintTop_toBottomOf="@+id/ironview"
         android:autofillHints="" />
 
     <TextView
-        android:id="@+id/malratetextview"
+        android:id="@+id/folicview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:text="@string/malnutrition_rate"
+        android:text="@string/folicacid"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/whs"
+        app:layout_constraintTop_toBottomOf="@+id/iron"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/malrate"
+        android:id="@+id/folic"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/malnutrition_rate"
-        android:inputType="text"
+        android:hint="@string/folicacid"
+        android:focusable="false"
+        android:inputType="none"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/malratetextview"
+        app:layout_constraintTop_toBottomOf="@+id/folicview"
         android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tetanusview"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/tetanustoxoid"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/folic"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/tetanus"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/tetanustoxoid"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tetanusview"
+        android:autofillHints="" />
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/vaccinetxt"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/vaccine"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/microtxt"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/micro"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:autofillHints=""
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/treatment"
+        android:id="@+id/prescription"
         android:layout_width="350dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg"
-        android:text="Start Treatment"
+        android:text="Prescribe"
         android:textSize="24sp"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/malrate"
+        app:layout_constraintTop_toBottomOf="@+id/tetanus"
         tools:targetApi="lollipop"/>
 
     <ProgressBar

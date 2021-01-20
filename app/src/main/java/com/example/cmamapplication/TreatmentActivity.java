@@ -25,10 +25,10 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
     private DatabaseReference reference,reference1;
     Biodata biodata;
 
-    String patient_id, malnutrition_rate, uid, oedema, trtmnt, drtn;
+    String patient_id, malnutrition_rate, uid, oedema, trtmnt, drtn, age;
 
     private Treatment treat;
-    private EditText treatment, duration;
+    private EditText treatment, duration, hiddenage;
     private Button prescription;
     private ProgressBar progressBar;
 
@@ -42,6 +42,7 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
 
         treatment = findViewById(R.id.treatment);
         duration = findViewById(R.id.duration);
+        hiddenage = findViewById(R.id.agehidden);
 
         prescription = (Button) findViewById(R.id.assigntreatment);
         prescription.setOnClickListener(this);
@@ -59,7 +60,9 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
                     patient_id = biodata.patient_id;
                     malnutrition_rate = biodata.muac;
                     oedema = biodata.oedema;
+                    age = biodata.age;
 
+                    hiddenage.setText(age);
 
                     if(malnutrition_rate.equals("MAM") && oedema.equals("Normal")){
                         treatment.setText("TSFP");
@@ -127,10 +130,21 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
         treat = new Treatment(treatment.getText().toString(), patient_id, duration.getText().toString(), currentDateandTime, currentDateandTime, "Active",Long.valueOf(0));
         reference.push().setValue(treat);
 
-        Intent intent = new Intent(TreatmentActivity.this, PrescriptionActivity.class);
-        intent.putExtra("BIODATA_ID", uid);
-        intent.putExtra("PATIENT_ID", patient_id);
-        intent.putExtra("TREATMENT", treatment.getText().toString());
-        TreatmentActivity.this.startActivity(intent);
+
+
+        if(Long.valueOf(hiddenage.getText().toString()) <=2) {
+            Intent intent = new Intent(TreatmentActivity.this, PrescriptionActivity.class);
+            intent.putExtra("BIODATA_ID", uid);
+            intent.putExtra("PATIENT_ID", patient_id);
+            intent.putExtra("TREATMENT", treatment.getText().toString());
+            TreatmentActivity.this.startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(TreatmentActivity.this, PrescriptionActivity.class);
+            intent.putExtra("BIODATA_ID", uid);
+            intent.putExtra("PATIENT_ID", patient_id);
+            intent.putExtra("TREATMENT", treatment.getText().toString());
+            TreatmentActivity.this.startActivity(intent);
+        }
     }
 }

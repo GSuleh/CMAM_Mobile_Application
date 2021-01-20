@@ -2,7 +2,7 @@ package com.example.cmamapplication;
 
 public class Patient {
 
-    public String fullname, guardian_name,  guardian_phone, treatment_group,  chv_id , status;
+    public String fullname, guardian_name,  guardian_phone, treatment_group,  chv_id , pregnant, status;
     public Long guardian_nat_id, chu_code;
 
     public Patient(){}
@@ -71,7 +71,15 @@ public class Patient {
         this.status = status;
     }
 
-    public Patient(String fullname, String guardian_name, String guardian_phone, String treatment_group, Long guardian_nat_id, Long chu_code, String chv_id, String status) {
+    public String getPregnant() {
+        return pregnant;
+    }
+
+    public void setPregnant(String pregnant) {
+        this.pregnant = pregnant;
+    }
+
+    public Patient(String fullname, String guardian_name, String guardian_phone, String treatment_group, Long guardian_nat_id, Long chu_code, String chv_id, String status, String pregnant) {
         this.fullname = fullname;
         this.guardian_name = guardian_name;
         this.guardian_phone = guardian_phone;
@@ -80,5 +88,6 @@ public class Patient {
         this.chu_code = chu_code;
         this.chv_id = chv_id;
         this.status = status;
+        this.pregnant = pregnant;
     }
 }

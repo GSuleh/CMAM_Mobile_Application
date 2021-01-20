@@ -56,7 +56,7 @@ public class MuacTestResultActivity extends AppCompatActivity implements View.On
 
                     armcirc = biodata.arm_circumference;
                     malrates = biodata.muac;
-                    whzscore = biodata.weight;
+                    whzscore = biodata.weight;;
 
                     muac.setText(armcirc);
                     whz.setText(whzscore);
@@ -91,6 +91,7 @@ public class MuacTestResultActivity extends AppCompatActivity implements View.On
     }
 
     private void startTreatment() {
+
 
         Intent intent = new Intent(MuacTestResultActivity.this, TreatmentActivity.class);
         intent.putExtra("BIODATA_ID", uid);

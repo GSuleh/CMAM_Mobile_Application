@@ -5,8 +5,8 @@ public class Prescription {
     String patient_id, vitamin, albendazole, measles, plump_sup, date_created;
     Long vitamin_dosage, albendazole_dosage, measles_dosage, plump_sup_daily_dosage, ratio;
 
-    String iron, folic, teatenus_toxoid, micronutrient;
-    Long iron_daily_dosage, iron_dosage, folic_daily_dosage, folic_dosage, teatenus_toxoid_dosage, micronutrient_dosage;
+    String iron, folic, teatenus_toxoid, micronutrient, vaccine;
+    Long iron_daily_dosage, iron_dosage, folic_daily_dosage, folic_dosage, teatenus_toxoid_dosage, micronutrient_dosage, vaccine_dosage;
 
     public Prescription() {
     }
@@ -179,7 +179,23 @@ public class Prescription {
         this.micronutrient_dosage = micronutrient_dosage;
     }
 
-    public Prescription(String patient_id, String vitamin_id, String albendazole_id, String measles_id, String plump_sup_id, String date_created, Long vitamin_dosage, Long albendazole_dosage, Long measles_dosage, Long plump_sup_daily_dosage, Long ratio, String iron_id, String folic_id, String teatenus_toxoid_id, String micronutrient_id, Long iron_daily_dosage, Long iron_dosage, Long folic_daily_dosage, Long folic_dosage, Long teatenus_toxoid_dosage, Long micronutrient_dosage) {
+    public String getVaccine() {
+        return vaccine;
+    }
+
+    public void setVaccine(String vaccine) {
+        this.vaccine = vaccine;
+    }
+
+    public Long getVaccine_dosage() {
+        return vaccine_dosage;
+    }
+
+    public void setVaccine_dosage(Long vaccine_dosage) {
+        this.vaccine_dosage = vaccine_dosage;
+    }
+
+    public Prescription(String patient_id, String vitamin_id, String albendazole_id, String measles_id, String plump_sup_id, String date_created, Long vitamin_dosage, Long albendazole_dosage, Long measles_dosage, Long plump_sup_daily_dosage, Long ratio, String iron_id, String folic_id, String teatenus_toxoid_id, String micronutrient_id, String vaccine, Long iron_daily_dosage, Long iron_dosage, Long folic_daily_dosage, Long folic_dosage, Long teatenus_toxoid_dosage, Long micronutrient_dosage, Long vaccine_dosage) {
         this.patient_id = patient_id;
         this.vitamin = vitamin_id;
         this.albendazole = albendazole_id;
@@ -195,11 +211,13 @@ public class Prescription {
         this.folic = folic_id;
         this.teatenus_toxoid = teatenus_toxoid_id;
         this.micronutrient = micronutrient_id;
+        this.vaccine = vaccine;
         this.iron_daily_dosage = iron_daily_dosage;
         this.iron_dosage = iron_dosage;
         this.folic_daily_dosage = folic_daily_dosage;
         this.folic_dosage = folic_dosage;
         this.teatenus_toxoid_dosage = teatenus_toxoid_dosage;
         this.micronutrient_dosage = micronutrient_dosage;
+        this.vaccine_dosage = vaccine_dosage;
     }
 }

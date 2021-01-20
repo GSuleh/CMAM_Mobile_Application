@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TreatmentActivity">
+    tools:context=".FollowupActivity">
 
     <RelativeLayout
         android:id="@+id/relative"
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Treatment"
+            android:text="Follow Up"
             android:textColor="#000000"
             android:textSize="24sp"></TextView>
 
@@ -38,9 +38,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text=" Assign Treatment type Automatically based on test results"
+        android:text="Select follow Up date"
         android:textAlignment="center"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"
@@ -51,12 +51,12 @@
 
     <!--suppress AndroidDomInspection -->
     <TextView
-        android:id="@+id/treatmenttextview"
+        android:id="@+id/agetextview"
         android:layout_width="350dp"
         android:layout_height="30dp"
         android:layout_marginTop="60dp"
         android:ems="10"
-        android:text="@string/treatment"
+        android:text="@string/follow_up_date"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -65,76 +65,44 @@
         android:autofillHints="" />
 
     <EditText
-        android:visibility="gone"
-        android:id="@+id/agehidden"
-        android:layout_width="350dp"
+        android:id="@+id/date"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="@string/dob"
         android:inputType="text"
         android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:autofillHints=""
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/treatment"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/treatment"
-        android:inputType="none"
-        android:focusable="false"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/treatmenttextview"
+        app:layout_constraintLeft_toRightOf="@id/datepicker"
+        app:layout_constraintTop_toBottomOf="@+id/agetextview"
         android:autofillHints="" />
 
-    <TextView
-        android:id="@+id/durationtextview"
-        android:layout_width="350dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:text="@string/duration"
-        android:textSize="24sp"
-        android:textColor="#000000"
+    <ImageView
+        android:id="@+id/datepicker"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:src="@drawable/datepicker"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/treatment"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="@+id/date"
+        app:layout_constraintRight_toLeftOf="@id/date"
+        />
 
-    <EditText
-        android:id="@+id/duration"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/duration"
-        android:inputType="none"
-        android:focusable="false"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/durationtextview"
-        android:autofillHints="" />
+
 
     <Button
-        android:id="@+id/assigntreatment"
+        android:id="@+id/followup"
         android:layout_width="350dp"
         android:layout_height="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/bg"
-        android:text="Proceed to prescription"
+        android:text="@string/set_date"
         android:textSize="24sp"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/duration"
+        app:layout_constraintTop_toBottomOf="@+id/date"
         tools:targetApi="lollipop"/>
 
     <ProgressBar
@@ -148,5 +116,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,18 +23,19 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PLW_Patient extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    private Spinner spinner;
+    private Spinner spinner, spinner1;
     private FirebaseUser user;
     private DatabaseReference reference, reference1;
     private Patient patient;
 
     private EditText fullname, national_id, guardianphone;
-    private String uid, item;
+    private String uid, item,item1;
     private Long committee;
     private Button addPatient;
     private ProgressBar progressBar;
 
     String[] plw = {"Select Status", "Pregnant", "Lactating"};
+    String[] pregnant = {"Select", "TRUE", "FALSE"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +55,16 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
         spinner = (Spinner) findViewById(R.id.plw);
         spinner.setOnItemSelectedListener(this);
 
+        spinner1 = (Spinner) findViewById(R.id.pregnant);
+        spinner1.setOnItemSelectedListener(this);
+
         ArrayAdapter array = new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,plw);
         array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setAdapter(array);
+        ArrayAdapter array1 = new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,pregnant);
+        array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner1.setAdapter(array1);
 
         addPatient = (Button) findViewById(R.id.newpatient);
         addPatient.setOnClickListener(this);
@@ -84,7 +91,7 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
 
                 final String tel = guardianphone.getText().toString().trim();
                 final Long id = Long.valueOf(String.valueOf(national_id.getText()));
-                patient = new Patient(fullname.getText().toString(), null, tel, "Pregnant and lactating women", id, committee, uid,spinner.getSelectedItem().toString());
+                patient = new Patient(fullname.getText().toString(), null, tel, "Pregnant and lactating women", id, committee, uid,spinner.getSelectedItem().toString(),spinner1.getSelectedItem().toString());
                 reference1.push().setValue(patient);
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -105,6 +112,7 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         item = spinner.getSelectedItem().toString();
+        item1 = spinner1.getSelectedItem().toString();
     }
 
     @Override

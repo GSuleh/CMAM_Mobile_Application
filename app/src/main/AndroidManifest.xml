@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PLWPrescriptionActivity"></activity>
+        <activity android:name=".FollowupActivity"></activity>
+        <activity android:name=".PLWPrescriptionActivity" />
         <activity android:name=".PrescriptionActivity" />
         <activity android:name=".SurveyActivity" />
         <activity android:name=".TreatmentActivity" />

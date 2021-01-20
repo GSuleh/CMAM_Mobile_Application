@@ -147,4 +147,10 @@
     <string name="albendazole">Albendazole</string>
     <string name="measles_vaccine">Measles Vaccine</string>
     <string name="plumpy_suppliment_packets">Plumpy Suppliment Packets</string>
+    <string name="ironpluss">Iron Plus</string>
+    <string name="folicacid">Folic Acid</string>
+    <string name="tetanustoxoid">Tetanus Toxoid</string>
+    <string name="pregnancy_status">Pregnancy Status</string>
+    <string name="follow_up_date">Follow Up Date</string>
+    <string name="set_date">Set Date</string>
 </resources>
