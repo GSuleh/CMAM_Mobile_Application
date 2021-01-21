@@ -43,12 +43,14 @@ public class FollowupActivity extends AppCompatActivity implements View.OnClickL
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
+        reference = FirebaseDatabase.getInstance().getReference("FollowUp");
+
         date = findViewById(R.id.date);
 
         datepicker = findViewById(R.id.datepicker);
         datepicker.setOnClickListener(this);
 
-        followup = (Button) findViewById(R.id.addbiodata);
+        followup = (Button) findViewById(R.id.followup);
         followup.setOnClickListener(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progressbar);

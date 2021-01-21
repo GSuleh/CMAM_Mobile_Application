@@ -31,10 +31,10 @@ public class PLWPrescriptionActivity extends AppCompatActivity implements View.O
     ResourceClass resource;
     Prescription prescription;
     Patient patients;
-    String bioid, uid, id, patient_id, treatment, treatment_group, pregnant, age,dob, malnutrition_rate, oedema;
+    String bioid, uid, id, patient_id, treatment, status, pregnant, age,dob, malnutrition_rate, oedema;
     Long committeeid;
 
-    private EditText vitamin, iron, folic, tetanus, comid, treatgroup, pregnancy, micro, vaccine;
+    private EditText vitamin, iron, folic, tetanus, comid, plwstatus, pregnancy, micro, vaccine;
     private TextView vitamintxt, irontxt, folictxt, tetanustxt, microtxt, vaccinetxt;
     private Button prescribe;
     private ProgressBar progressBar;
@@ -66,7 +66,7 @@ public class PLWPrescriptionActivity extends AppCompatActivity implements View.O
         vaccinetxt = findViewById(R.id.vaccinetxt);
 
         comid = findViewById(R.id.committeeid);
-        treatgroup = findViewById(R.id.treatgroup);
+        plwstatus = findViewById(R.id.treatgroup);
         pregnancy = findViewById(R.id.pregnant);
 
 
@@ -79,10 +79,10 @@ public class PLWPrescriptionActivity extends AppCompatActivity implements View.O
 
                 if (patients != null) {
 
-                    treatment_group = patients.treatment_group;
-                    pregnant = patients.pregnant;
+                    status = patients.pregnant;
+                    pregnant = patients.status;
 
-                    treatgroup.setText(treatment_group);
+                    plwstatus.setText(status);
                     pregnancy.setText(pregnant);
 
                 }
@@ -106,9 +106,9 @@ public class PLWPrescriptionActivity extends AppCompatActivity implements View.O
                     malnutrition_rate = biodata.muac;
                     oedema = biodata.oedema;
 
-                    if(treatgroup.getText().toString().equals("Pregnant and lactating women") && pregnancy.getText().toString().equals("TRUE")  && treatment.equals("TSFP")){
+                    if(plwstatus.getText().toString().equals("Pregnant") && pregnancy.getText().toString().equals("Third Trimester")  && treatment.equals("TSFP")){
 
-                        vitamin.setText("");
+                        vitamin.setText("0");
                         vitamintxt.setText("Vitamin A (Not Prescribed)");
                         iron.setText("30");
                         irontxt.setText("60mg Iron plus");
@@ -116,12 +116,12 @@ public class PLWPrescriptionActivity extends AppCompatActivity implements View.O
                         folictxt.setText("400ug Folic Acid");
                         tetanus.setText("1");
                         tetanustxt.setText("Tetanus Toxoid (Standard)");
-                        micro.setText("");
-                        microtxt.setText("");
+                        micro.setText("0");
+                        microtxt.setText("Micronutrient (Not Prescribed)");
                         vaccine.setText("1");
                         vaccinetxt.setText("Vaccine");
                     }
-                    else if(treatgroup.getText().toString().equals("Pregnant and lactating women") && pregnancy.getText().toString().equals("FALSE")  && treatment.equals("TSFP")){
+                    else if(plwstatus.getText().toString().equals("Lactating") && pregnancy.getText().toString().equals("More than 6 weeks post partum")  && treatment.equals("TSFP")){
                         vitamin.setText("1");
                         vitamintxt.setText("Vitamin A 200 000 IU");
                         iron.setText("30");
@@ -132,8 +132,22 @@ public class PLWPrescriptionActivity extends AppCompatActivity implements View.O
                         tetanustxt.setText("Tetanus Toxoid (Not Prescribed)");
                         micro.setText("1");
                         microtxt.setText("Micronutrient");
-                        vaccine.setText("");
-                        vaccinetxt.setText("");
+                        vaccine.setText("0");
+                        vaccinetxt.setText("Vaccine (Not Prescribed)");
+                    }
+                    else if(plwstatus.getText().toString().equals("Lactating") && pregnancy.getText().toString().equals("Less than 6 weeks post partum")  && treatment.equals("TSFP")){
+                        vitamin.setText("0");
+                        vitamintxt.setText("Vitamin A (Not Prescribed)");
+                        iron.setText("30");
+                        irontxt.setText("60mg Iron plus");
+                        folic.setText("30");
+                        folictxt.setText("400ug Folic Acid");
+                        tetanus.setText("0");
+                        tetanustxt.setText("Tetanus Toxoid (Not Prescribed)");
+                        micro.setText("1");
+                        microtxt.setText("Micronutrient");
+                        vaccine.setText("0");
+                        vaccinetxt.setText("Vaccine (Not Prescribed)");
                     }
 
                 }

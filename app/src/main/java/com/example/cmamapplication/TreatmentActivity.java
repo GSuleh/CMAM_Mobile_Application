@@ -84,6 +84,10 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
                         treatment.setText("SC");
                         duration.setText("4 months");
                     }
+                    else if(malnutrition_rate.equals("SAM")) {
+                        treatment.setText("TSFP");
+                        duration.setText("3 months");
+                    }
                     else if(malnutrition_rate.equals("Normal") && oedema.equals("Normal"))
                     {
                         Toast.makeText(TreatmentActivity.this, "Patient is perfectly healthy.", Toast.LENGTH_LONG).show();

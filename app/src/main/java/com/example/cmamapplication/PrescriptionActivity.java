@@ -81,7 +81,7 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
 
                         vitamin.setText("1");
                         vitamintxt.setText("Vitamin A 100 000 IU");
-                        albendazole.setText("");
+                        albendazole.setText("0");
                         albendazoletxt.setText("Albendazole (Not Prescribed)");
                         measles.setText("1");
                         plumpy.setText("30");
@@ -107,9 +107,9 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
                     }
                     else if(malnutrition_rate.equals("Normal")  && oedema.equals("Normal"))
                     {
-                        vitamin.setText("");
+                        vitamin.setText("0");
                         vitamintxt.setText("Vitamin A (Not Prescribed)");
-                        albendazole.setText("");
+                        albendazole.setText("0");
                         albendazoletxt.setText("Albendazole (Not Prescribed)");
                         measles.setText("1");
                         plumpy.setText("30");

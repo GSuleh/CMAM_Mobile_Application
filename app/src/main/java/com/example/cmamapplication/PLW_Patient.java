@@ -35,7 +35,7 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
     private ProgressBar progressBar;
 
     String[] plw = {"Select Status", "Pregnant", "Lactating"};
-    String[] pregnant = {"Select", "TRUE", "FALSE"};
+    String[] pregnant = {"Select", "Third Trimester", "Less than 6 weeks post partum", "More than 6 weeks post partum","FALSE"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +64,7 @@ public class PLW_Patient extends AppCompatActivity implements View.OnClickListen
         ArrayAdapter array1 = new ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,pregnant);
         array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        spinner.setAdapter(array);
         spinner1.setAdapter(array1);
 
         addPatient = (Button) findViewById(R.id.newpatient);
