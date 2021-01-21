@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MuacTestActivity">
+    tools:context=".MapTsfpPatientActivity">
 
     <RelativeLayout
         android:id="@+id/relative"
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="Check for Bilateral Oedema"
+            android:text="FollowUp"
             android:textColor="#000000"
             android:textSize="24sp"></TextView>
 
@@ -33,67 +33,98 @@
         </ImageView>
     </RelativeLayout>
 
+
     <TextView
-        android:id="@+id/banner"
+        android:id="@+id/bannerdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text=" Formally test for
-oedema with finger
-pressure"
+        android:layout_marginTop="15dp"
+        android:text="@string/followup"
         android:textAlignment="center"
-        android:layout_marginTop="90dp"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
+        app:layout_anchorGravity="bottom|center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative"
         android:layout_gravity="center_horizontal" />
 
-    <!--suppress AndroidDomInspection -->
+
+
+
     <TextView
-        android:id="@+id/armcirctextview"
+        android:id="@+id/textviewname"
         android:layout_width="350dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:ems="10"
-        android:text="@string/muac"
+        android:text="@string/name"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintTop_toBottomOf="@+id/bannerdescription"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/armcirc"
+        android:id="@+id/assignedname"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="@string/armcirc"
-        android:inputType="numberDecimal"
+        android:hint="@string/name"
+        android:inputType="none"
+        android:focusable="false"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/armcirctextview"
+        app:layout_constraintTop_toBottomOf="@+id/textviewname"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textviewtreatmntgroup"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/treatment"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assignedname"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/assignedtreatmentgroup"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="none"
+        android:focusable="false"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textviewtreatmntgroup"
         android:autofillHints="" />
 
 
     <Button
-        android:id="@+id/muactest"
+        android:id="@+id/beginfollowup"
         android:layout_width="350dp"
         android:layout_height="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/bg"
-        android:text="@string/next"
+        android:text="Start Followup"
         android:textSize="24sp"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/armcirc"
+        app:layout_constraintTop_toBottomOf="@+id/assignedtreatmentgroup"
         tools:targetApi="lollipop"/>
 
     <ProgressBar
@@ -107,5 +138,4 @@ pressure"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

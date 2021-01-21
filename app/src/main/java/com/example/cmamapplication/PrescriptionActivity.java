@@ -115,6 +115,11 @@ public class PrescriptionActivity extends AppCompatActivity implements View.OnCl
                         plumpy.setText("30");
                         plumpytxt.setText("Plumpy (Monthly Ration");
                     }
+                    else if(treatment.equals("OTP")  || treatment.equals("SC"))
+                    {
+                        Intent intent = new Intent(PrescriptionActivity.this, Home.class);
+                        PrescriptionActivity.this.startActivity(intent);
+                    }
 
                 }
             }

@@ -2,10 +2,18 @@ package com.example.cmamapplication;
 
 public class Patient {
 
-    public String fullname, guardian_name,  guardian_phone, treatment_group,  chv_id , pregnant, status;
+    public String fullname, guardian_name,  guardian_phone, treatment_group,  chv_id , pregnant, status, treatment;
     public Long guardian_nat_id, chu_code;
 
     public Patient(){}
+
+    public String getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(String treatment) {
+        this.treatment = treatment;
+    }
 
     public String getFullname() {
         return fullname;

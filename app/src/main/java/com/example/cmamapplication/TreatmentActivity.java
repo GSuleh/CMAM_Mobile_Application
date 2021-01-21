@@ -22,7 +22,7 @@ import java.util.Date;
 
 public class TreatmentActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private DatabaseReference reference,reference1;
+    private DatabaseReference reference,reference1,reference2;
     Biodata biodata;
 
     String patient_id, malnutrition_rate, uid, oedema, trtmnt, drtn, age;
@@ -39,6 +39,7 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
 
         reference = FirebaseDatabase.getInstance().getReference("Treatment");
         reference1 = FirebaseDatabase.getInstance().getReference("Biodata");
+        reference2 = FirebaseDatabase.getInstance().getReference("Patient");
 
         treatment = findViewById(R.id.treatment);
         duration = findViewById(R.id.duration);
@@ -84,7 +85,7 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
                         treatment.setText("SC");
                         duration.setText("4 months");
                     }
-                    else if(malnutrition_rate.equals("SAM")) {
+                    else if(malnutrition_rate.equals("SAM") && oedema.equals("Null")) {
                         treatment.setText("TSFP");
                         duration.setText("3 months");
                     }
@@ -96,7 +97,6 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
                         TreatmentActivity.this.startActivity(intent);
 
                     }
-
                 }
             }
 
@@ -133,6 +133,10 @@ public class TreatmentActivity extends AppCompatActivity implements View.OnClick
 
         treat = new Treatment(treatment.getText().toString(), patient_id, duration.getText().toString(), currentDateandTime, currentDateandTime, "Active",Long.valueOf(0));
         reference.push().setValue(treat);
+
+
+                    reference2.child(patient_id).child("treatment").setValue(treatment.getText().toString());
+
 
 
 

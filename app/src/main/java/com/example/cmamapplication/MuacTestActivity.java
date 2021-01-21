@@ -74,7 +74,7 @@ public class MuacTestActivity extends AppCompatActivity implements View.OnClickL
 
         final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
         final String currentDateandTime = sdf.format(new Date());
-        final Long arm = Long.valueOf(armcirc.getText().toString());
+        final Long arm = Long.valueOf((long) Double.parseDouble(armcirc.getText().toString()));
         reference1.orderByChild("patient_id").equalTo(patientid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -108,6 +108,7 @@ public class MuacTestActivity extends AppCompatActivity implements View.OnClickL
 
                         test = new Test(uid,"muac","Middle Upper Arm Circumference",armcirc.getText().toString(),"SAM",currentDateandTime);
                         reference.push().setValue(test);
+                        reference1.child(uid).child("oedema").setValue("Null");
                         progressBar.setVisibility(View.VISIBLE);
 
                         Toast.makeText(MuacTestActivity.this, uid, Toast.LENGTH_LONG).show();

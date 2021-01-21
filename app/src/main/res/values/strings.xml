@@ -153,4 +153,5 @@
     <string name="pregnancy_status">Pregnancy Status</string>
     <string name="follow_up_date">Follow Up Date</string>
     <string name="set_date">Set Date</string>
+    <string name="followup">FollowUp</string>
 </resources>

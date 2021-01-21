@@ -5,6 +5,9 @@ public class Treatment {
     String treatment, patient_id, duration_in_weeks, date_created, date_updated, status;
     Long followups;
 
+    public Treatment() {
+    }
+
     public String getTreatment() {
         return treatment;
     }
