@@ -46,6 +46,7 @@ public class PatientAdapter extends RecyclerView.Adapter {
                 intent.putExtra("TREATMENT_GROUP", String.valueOf(patients.getTreatment_group()));
                 intent.putExtra("STATUS", String.valueOf(patients.getStatus()));
                 intent.putExtra("PHASE", String.valueOf(patients.getPregnant()));
+                intent.putExtra("CHU", String.valueOf(patients.getChu_code()));
                 context.startActivity(intent);
             }
         });

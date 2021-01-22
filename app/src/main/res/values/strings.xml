@@ -154,4 +154,8 @@
     <string name="follow_up_date">Follow Up Date</string>
     <string name="set_date">Set Date</string>
     <string name="followup">FollowUp</string>
+    <string name="followupdesc">Follow up on patients admitted to Tsfp</string>
+    <string name="treatmentgroup">Treatment Group</string>
+    <string name="tsfppatients">TSFP Patients</string>
+    <string name="chunit">CHU</string>
 </resources>

@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
-            android:text="FollowUp"
+            android:text="Patient Details"
             android:textColor="#000000"
             android:textSize="24sp"></TextView>
 
@@ -34,45 +34,27 @@
     </RelativeLayout>
 
 
-    <TextView
-        android:id="@+id/bannerdescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginTop="15dp"
-        android:text="@string/followup"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="italic"
-        android:textColor="@color/colorPrimary"
-        app:layout_anchorGravity="bottom|center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relative"
-        android:layout_gravity="center_horizontal" />
-
-
 
 
     <TextView
         android:id="@+id/textviewname"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="90dp"
         android:ems="10"
         android:text="@string/name"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bannerdescription"
+        app:layout_constraintTop_toTopOf="parent"
         android:autofillHints="" />
 
     <EditText
         android:id="@+id/assignedname"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="none"
@@ -84,12 +66,12 @@
         android:autofillHints="" />
 
     <TextView
-        android:id="@+id/textviewtreatmntgroup"
+        android:id="@+id/textviewtreatmentgroup"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
-        android:text="@string/treatment"
+        android:text="@string/treatmentgroup"
         android:textSize="24sp"
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -101,31 +83,60 @@
         android:id="@+id/assignedtreatmentgroup"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="none"
         android:focusable="false"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textviewtreatmntgroup"
+        app:layout_constraintTop_toBottomOf="@+id/textviewtreatmentgroup"
         android:autofillHints="" />
 
+    <TextView
+        android:id="@+id/textviewchu"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:text="@string/chunit"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/assignedtreatmentgroup"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/assignedchu"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="none"
+        android:focusable="false"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textviewchu"
+        android:autofillHints="" />
 
     <Button
-        android:id="@+id/beginfollowup"
+        android:id="@+id/next"
         android:layout_width="350dp"
         android:layout_height="70dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg"
-        android:text="Start Followup"
+        android:text="@string/next"
         android:textSize="24sp"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/assignedtreatmentgroup"
+        app:layout_constraintTop_toBottomOf="@+id/assignedchu"
         tools:targetApi="lollipop"/>
+
+
 
     <ProgressBar
         android:id="@+id/progressbar"
