@@ -63,10 +63,27 @@ public class MapTsfpPatientActivity extends AppCompatActivity {
             }
         });
 
+        ref.orderByChild("Code").equalTo(Long.valueOf(chu)).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    CommunityHealthUnit data = ds.getValue(CommunityHealthUnit.class);
 
+                    if (data != null) {
+                        chuname = data.Name;
+                        chuedit.setText(chuname);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         nameedittext.setText(name);
         tgroup.setText(treatment_group);
-        chuedit.setText(chu);
+
 
     }
 
