@@ -122,8 +122,8 @@
     <string name="nationalid">Guardian National ID</string>
     <string name="fullname">Full Name</string>
     <string name="age">Age</string>
-    <string name="height">Height</string>
-    <string name="weight">Weight</string>
+    <string name="height">Height (Centimetres)</string>
+    <string name="weight">Weight (KGs)</string>
     <string name="gender">Gender</string>
     <string name="severity">Severity</string>
     <string name="armcirc">Arm Circumference</string>
@@ -158,4 +158,7 @@
     <string name="treatmentgroup">Treatment Group</string>
     <string name="tsfppatients">TSFP Patients</string>
     <string name="chunit">CHU</string>
+    <string name="done">DONE</string>
+    <string name="discharged">Discharged</string>
+    <string name="pendingfollowup">Pending Followup</string>
 </resources>

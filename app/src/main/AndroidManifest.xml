@@ -10,7 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapTsfpPatientActivity"></activity>
+        <activity android:name=".MapFollowUpActivity"></activity>
+        <activity android:name=".DischargedPatientsActivity" />
+        <activity android:name=".PendingFollowupActivity" />
+        <activity android:name=".ViewBioDataActivity" />
+        <activity android:name=".MapOtpPatientActivity" />
+        <activity android:name=".MapTsfpPatientActivity" />
         <activity android:name=".FollowupActivity" />
         <activity android:name=".PLWPrescriptionActivity" />
         <activity android:name=".PrescriptionActivity" />

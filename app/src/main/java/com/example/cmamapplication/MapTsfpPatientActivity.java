@@ -3,7 +3,9 @@ package com.example.cmamapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -17,11 +19,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapTsfpPatientActivity extends AppCompatActivity {
+public class MapTsfpPatientActivity extends AppCompatActivity implements View.OnClickListener {
 
     private DatabaseReference reference,ref,ref1;
-    List<String> patientData;
-
     String patientid,chuname;
 
     String name, treatment_group, status, phase, chu;
@@ -39,6 +39,7 @@ public class MapTsfpPatientActivity extends AppCompatActivity {
         tgroup = findViewById(R.id.assignedtreatmentgroup);
         chuedit = findViewById(R.id.assignedchu);
         next = findViewById(R.id.next);
+        next.setOnClickListener(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
 
@@ -98,5 +99,20 @@ public class MapTsfpPatientActivity extends AppCompatActivity {
             chu = getIntent().getStringExtra("CHU");
 
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.next:
+                Next();
+                break;
+        }
+    }
+
+    private void Next() {
+        Intent intent = new Intent(MapTsfpPatientActivity.this, ViewBioDataActivity.class);
+        intent.putExtra("PATIENT_ID", patientid);
+        MapTsfpPatientActivity.this.startActivity(intent);
     }
 }
